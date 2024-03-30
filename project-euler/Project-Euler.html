@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-euler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="margin: 150px 150px;">
+    <header>
+        <h1>Thoughts and Experience on Solving Project Euler</h1>
+        <p><b>Author : Ma Hewang</b></p>
+        <p>This blog summarize all my thoughts and experience when solving more than 130 project-euler problems.
+            It takes about 30 minutes to read all of them.
+        </p>
+        <img src="https://projecteuler.net/profile/mahewang.png" alt="My profile of projecteuler">
+    </header>
+    <main>
+
+        <!-- one -->
+        <div>
+            <h2>Brief Introduce to Project Euler</h2><br>
+            <p>Project Euler is a project aimed at promoting the intersection of mathematics and computer
+                science throughsolving computational programming problems. It is named after the Swiss
+                mathematician Euler (Leonhard Euler).</p>
+            <p>Project Euler provides a series of challenging
+                mathematical and computer science problems covering a wide range of topics, from simple
+                number theory problems to complex combinatorial challenges. Participants are encouraged
+                to use their programming and problem-solving skills to devise efficient solutions to
+                these problems.</p>
+            <p>The project is popular among programmers, mathematicians, and enthusiasts
+                as a wayto improve their skills and deepen their understanding of both mathematics and
+                computer science concepts.</p>
+            <br>
+            <p style="text-align: center;"><b>"Project Euler exists to encourage, challenge, and
+                    develop the skills and enjoyment
+                    of anyone with an interest in the fascinating world of mathematics."</b></p><br>
+        </div>
+        <!-- two -->
+        <div>
+            <h2>My Progress of Project Euler</h2><br>
+            <img src="progress.png" alt="my progress" style="height: 200px; margin-left: 170px;">
+            <p>Since I was admitted to the School of Software, University of Science and Technology of China,
+                I set the object to find a job in algorithm.
+                To reach that goal, I learn and solve algorithm problems via leetcode and project euler.</p>
+            <p>I use c++ and java to solve complicated problems and python to easy ones, through which I
+                practice my proficiency in c++ and Java. I am now familiar with coding with objective method
+                to solve regular and hard algorithm problems.</p>
+            <br>
+            <br>
+        </div>
+        <!-- type one -->
+        <div>
+            <h2>Problem Type 1: Primes</h2>
+            <br>
+            <p>Wiki page about prime: <a href="https://en.wikipedia.org/wiki/Prime_number">prime number</a></p>
+            <p>Prime problems are intresting because of its following features:</p>
+            <p><b>Countability: </b>There are infinitely many prime numbers.</p>
+            <p><b> Distribution: </b>Prime numbers become less frequent as numbers get larger, but they still
+                occur with surprising regularity.</p>
+            <p><b> Role in Mathematics: </b>Prime numbers play a fundamental role in number theory and
+                cryptography. They are the building blocks of all integers.</p>
+            <p><b>Density: </b>Despite becoming less frequent as numbers get larger, prime numbers
+                are distributed in such a way that there is no apparent pattern or formula for generating
+                them directly.</p><br>
+
+
+            <p>We can use basic prime function returning a boolean to test primes. Since the time complexity
+                of this function is not large, it can be used frequently.</p>
+            <pre
+                style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(106, 115, 125); font-weight: 400;">// Judging a prime</span></li><li><span style="color: rgb(215, 58, 73); font-weight: 400;">private</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">static</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">boolean</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">prime</span><span style="color: rgb(36, 41, 46); font-weight: 400;">(<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> n)</span> {</li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">if</span> (n &lt;= <span style="color: rgb(0, 92, 197); font-weight: 400;">1</span>) <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">false</span>;</li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">for</span> (<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">i</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">2</span>; i &lt;= Math.sqrt(n); i++)</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">if</span> (n % i == <span style="color: rgb(0, 92, 197); font-weight: 400;">0</span>) <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">false</span>;</li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">true</span>;</li><li>}</li></ol></pre>
+            <p>However, we may encounter situations where we need to find many prime numbers and search, or at the
+                same time to find Composite numbers. We can use sieve to do that.</p>
+            <pre
+                style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(106, 115, 125); font-weight: 400;">// Seiving primes</span></li><li><span style="color: rgb(215, 58, 73); font-weight: 400;">private</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">static</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">boolean</span>[] primes_composites(<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> size) {</li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">boolean</span>[] prime = <span style="color: rgb(215, 58, 73); font-weight: 400;">new</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">boolean</span>[size];</li><li>    Arrays.fill(prime, <span style="color: rgb(0, 92, 197); font-weight: 400;">true</span>);</li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">for</span> (<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">i</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">2</span>; i &lt; size; i++) {</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">if</span> (!prime[i]) <span style="color: rgb(215, 58, 73); font-weight: 400;">continue</span>;</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">for</span> (<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">j</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> i + i; j &lt; size; j += i) prime[j] = <span style="color: rgb(0, 92, 197); font-weight: 400;">false</span>;</li><li>    }</li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> prime;</li><li>}</li></ol></pre>
+            <p>Other operations differs every problem, but understanding properties of primes is important. </p>
+            <p>Related problems and solutions:</p>
+            <ul>
+                <li><a href="https://projecteuler.net/problem=134">Prime Pair Connection, diifficult rating: 45%</a>
+                </li>
+                <p>Solution: </p>
+                <pre
+                    style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(215, 58, 73); font-weight: 400;">import</span> java.util.Arrays;</li><li></li><li><span style="color: rgb(215, 58, 73); font-weight: 400;">public</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">class</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">p134</span> {</li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">private</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">static</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">test_size</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">1000000</span>;</li><li></li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">private</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">static</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">boolean</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">prime</span><span style="color: rgb(36, 41, 46); font-weight: 400;">(<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> n)</span> {</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">if</span> (n &lt;= <span style="color: rgb(0, 92, 197); font-weight: 400;">1</span>) <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">false</span>;</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">for</span> (<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">i</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">2</span>; i &lt;= Math.sqrt(n); i++)</li><li>            <span style="color: rgb(215, 58, 73); font-weight: 400;">if</span> (n % i == <span style="color: rgb(0, 92, 197); font-weight: 400;">0</span>) <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">false</span>;</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">true</span>;</li><li>    }</li><li></li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">private</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">static</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">add_prime</span><span style="color: rgb(36, 41, 46); font-weight: 400;">(<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> p)</span> {</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">ret</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">1</span>;</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">while</span> (p &gt; <span style="color: rgb(0, 92, 197); font-weight: 400;">0</span>) {</li><li>            ret *= <span style="color: rgb(0, 92, 197); font-weight: 400;">10</span>;</li><li>            p /= <span style="color: rgb(0, 92, 197); font-weight: 400;">10</span>;</li><li>        }</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> ret;</li><li>    }</li><li></li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">public</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">static</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">void</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">main</span><span style="color: rgb(36, 41, 46); font-weight: 400;">(String[] args)</span> {</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">long</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">sum</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">0</span>;</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">for</span> (<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">p1</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">5</span>; p1 &lt;= test_size; p1++)</li><li>            <span style="color: rgb(215, 58, 73); font-weight: 400;">if</span> (prime(p1)) {</li><li>                <span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">p2</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> p1 + <span style="color: rgb(0, 92, 197); font-weight: 400;">1</span>;</li><li>                <span style="color: rgb(215, 58, 73); font-weight: 400;">while</span> (!prime(p2)) p2++;</li><li>                <span style="color: rgb(106, 115, 125); font-weight: 400;">// run all p1 and p2</span></li><li>                <span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">add</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> add_prime(p1);</li><li>                <span style="color: rgb(215, 58, 73); font-weight: 400;">long</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">s</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> add + p1;</li><li>                <span style="color: rgb(215, 58, 73); font-weight: 400;">while</span> (s % p2 != <span style="color: rgb(0, 92, 197); font-weight: 400;">0</span>) s += add;</li><li>                sum += s;</li><li>            }</li><li>        System.out.println(sum);</li><li>    }</li><li>}</li><li></li></ol></pre>
+
+                <li><a href="https://projecteuler.net/problem=123">Prime Square Remainders, diifficult rating: 30%</a>
+                </li>
+
+                <p>solution: ( this solution requires some complex pre-calculations, you can read some problems
+                    before this to understand " 2 * n * p " )</p>
+                <pre
+                    style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(215, 58, 73); font-weight: 400;">public</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">class</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">p123</span> {</li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">private</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">static</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">long</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">remainder</span><span style="color: rgb(36, 41, 46); font-weight: 400;">(<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> p, <span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> n)</span> {</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">if</span> (n % <span style="color: rgb(0, 92, 197); font-weight: 400;">2</span> == <span style="color: rgb(0, 92, 197); font-weight: 400;">0</span>) <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">2</span>;</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">else</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> (<span style="color: rgb(215, 58, 73); font-weight: 400;">long</span>) <span style="color: rgb(0, 92, 197); font-weight: 400;">2</span> * n * p;</li><li>    }</li><li></li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">private</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">static</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">boolean</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">prime</span><span style="color: rgb(36, 41, 46); font-weight: 400;">(<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> n)</span> {</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">if</span> (n &lt; <span style="color: rgb(0, 92, 197); font-weight: 400;">2</span>) <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">false</span>;</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">for</span> (<span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">i</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">2</span>; i &lt;= Math.sqrt(n); i++)</li><li>            <span style="color: rgb(215, 58, 73); font-weight: 400;">if</span> (n % i == <span style="color: rgb(0, 92, 197); font-weight: 400;">0</span>) <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">false</span>;</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">true</span>;</li><li>    }</li><li></li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">public</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">static</span> <span style="color: rgb(215, 58, 73); font-weight: 400;">void</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">main</span><span style="color: rgb(36, 41, 46); font-weight: 400;">(String[] args)</span> {</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">n</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">1</span>;</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">p</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">2</span>;</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">while</span> (<span style="color: rgb(0, 92, 197); font-weight: 400;">true</span>) {</li><li>            <span style="color: rgb(215, 58, 73); font-weight: 400;">if</span> (prime(p)) {</li><li>                <span style="color: rgb(215, 58, 73); font-weight: 400;">long</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">r</span> <span style="color: rgb(0, 92, 197); font-weight: 400;">=</span> remainder(p, n);</li><li>                <span style="color: rgb(215, 58, 73); font-weight: 400;">if</span> (r &gt; <span style="color: rgb(0, 92, 197); font-weight: 400;">10000000000l</span>){</li><li>                    System.out.println(p + <span style="color: rgb(3, 47, 98); font-weight: 400;">", "</span> + n);</li><li>                    <span style="color: rgb(215, 58, 73); font-weight: 400;">break</span>;</li><li>                }</li><li>                n++;</li><li>            }</li><li>            p++;</li><li>        }</li><li>    }</li><li>}</li><li></li></ol></pre>
+            </ul>
+
+            <p>Other related problems:</p>
+            <ul>
+                <li><a href="https://projecteuler.net/problem=118">Pandigital Prime Sets, diifficult rating: 45%</a>
+                </li>
+                <p>(this problems related to backtracking)</p>
+                <li><a href="https://projecteuler.net/problem=111">Primes with Runs, diifficult rating: 45%</a></li>
+            </ul>
+
+            <br><br>
+        </div>
+        <!-- type two -->
+        <div>
+            <h2>Problem Type 2: Squares</h2>
+            
+        </div>
+
+        <h2>类型三：回溯</h2>
+        <h2>类型四：动态规划</h2>
+        <h2>类型五：模拟</h2>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ma Hewang's Tech Blog</p>
+    </footer>
+</body>
+
+</html>
