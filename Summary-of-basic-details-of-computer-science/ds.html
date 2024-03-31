@@ -33,17 +33,19 @@
         </div>
 
         <div>
-            <h2>第一章：概述</h2>
+            <h2>第一章：概述</h2><br>
             <ul>
                 <li class="line">
                     算法大题可以使用一般的解法就不要花太多时间，可以使用set、map、priority_queue、vector等数据结构，而考察具体的实现时，要写出具体操作（红黑树不可能，但是堆的实现（adjust）有可能）
                 </li>
+                <br>
+                <br>
                 <li class="line">时间复杂度通常指最坏情况下的时间复杂度，比如未优化的并查集高度为n</li>
                 <li class="line">数组的逻辑不要想得太复杂，“三元组“题的方法是最普遍而简单的从0到n-1，要会设置一些结果变量如Dmin</li>
             </ul>
             <br>
 
-            <h2>第二章：线性结构</h2>
+            <h2>第二章：线性结构</h2><br>
             <ul>
                 <li class="line">
                     将长度分别为m、n的两个有序表归并成一个有序表最少比较次数为min(m,n)，最多比较次数为m+n-1.</li>
@@ -58,6 +60,7 @@
                 </li>
                 <li class="line">队列的应用：页面替换算法、进程调度、缓冲区.
                     栈的应用：括号匹配、迷宫求解、递归、进制转换</li>
+                <br><br>
                 <li class="line">双栈：可以在O(1)时间内实现push、pop、min操作，主栈是普通栈，用来实现push和pop，辅助栈和主栈是同步的，每次push都将
                     stack_min[top++]=(x
                     &lt;min)?x:min; 每次pop时辅助栈也会pop，这样辅助栈栈顶永远是当前的最小值。</li>
@@ -66,7 +69,7 @@
                 <li class="line">循环链表的逆置也使用头插法</li>
                 <li class="line">同一组不重复输入序列执行不同的入栈出栈操作，得到的结果也可能相同，因为初态终态并没有限制</li>
                 <li class="line">循环队列“在队列末尾使用牺牲一个单元的方法判断队空队满“，队空条件为rear==front，队满为（rear+1）%n==front，rear指向的是队尾元素的下一个存储单位
-                </li>
+                </li><br><br>
                 <li class="line">如果线性表相关算法题的具体操作代码太长，则可以写一部分伪代码，节省答题空间</li>
                 <li class="line">矩阵每行有序、每列有序的查找算法： </li>
                 <pre
@@ -90,14 +93,14 @@
             </ul>
             <br>
 
-            <h2>第三章：树形结构</h2>
+            <h2>第三章：树形结构</h2><br>
             <ul>
                 <li class="line">把二叉树所有节点（包括NULL和空位）都保存（规范顺序存储，正逆向都要注意空位要补全）</li>
                 <li class="line">按层次从上到下、同一层从左到右的顺序存储在数组中，不保存NULL节点（不规范的顺序存储）</li>
                 <li class="line">顺序存储的第i个节点的祖先是ceiling(m/2)-1（编号从0开始，如果从1开始就另外推算推算）,依此可以寻找其各代祖先</li>
                 <li class="line">二叉树是逻辑结构，但线索二叉树是加上线索之后的二叉链表结构，属于物理结构</li>
                 <li class="line">非空二叉树（空二叉树不成立！）的叶子节点数目等于度为二的节点个数加一（n0=n2+1）</li>
-                <li class="line">卡特兰数：C(n,2n)/(n+1);</li>
+                <li class="line">卡特兰数：C(n,2n)/(n+1);</li><br><br>
                 <li class="line">路径长度计算需要计算所有的叶子节点; <br>
                     树的路径长度是根到每个节点的路径长度之和; <br>
                     哈夫曼树带权路径长度是所有叶节点的带权路径之和; <br>
@@ -105,7 +108,7 @@
                 </li>
                 <li class="line">给定权值总数为n的哈夫曼树节点总数为2n-1</li>
                 <li class="line">哈夫曼树中如果有负权值则叶子节点到根节点的路径序列不一定有序</li>
-                <li class="line">哈夫曼编码要小心0和1的走向、只有叶节点可以编码</li>
+                <li class="line">哈夫曼编码要小心0和1的走向、只有叶节点可以编码</li><br><br>
                 <li class="line">判断树是否镜像：
                     Ismirror（a,b） 判断两棵树是否镜像（递归比较ismirror(a->left,b->right)&& ismirror(a->right,b->left)），再用mirror（root）
                 </li>
@@ -115,12 +118,14 @@
                 <li class="line">将二叉链表中的二叉树放进数组里：</li>
                 <pre
                     style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li>Void <span style="color: rgb(111, 66, 193); font-weight: 400;">trans</span><span style="color: rgb(36, 41, 46); font-weight: 400;">(TreeNode* root, <span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> b[], <span style="color: rgb(215, 58, 73); font-weight: 400;">int</span> k)</span>{</li><li>    If(root){</li><li>        b[k]=root-&gt;data;</li><li>        trans(root-&gt;left,b,<span style="color: rgb(0, 92, 197); font-weight: 400;">2</span>*k+<span style="color: rgb(0, 92, 197); font-weight: 400;">1</span>);</li><li>        trans(root-&gt;right,b,<span style="color: rgb(0, 92, 197); font-weight: 400;">2</span>*k+<span style="color: rgb(0, 92, 197); font-weight: 400;">2</span>);</li><li>    }</li><li>}</li><li></li></ol></pre>
+                <br><br>
                 <li class="line">使用<br>buildTreeNode_from_to( int pre[], int l_pre, int r_pre, int in[], int l_in, int
                     r_in)<br>函数对“由中序、先序遍历序列构造二叉树”等问题求解</li>
                 <li class="line">判断一个数是否是完全二叉树：将所有节点入队（包括空节点），遍历时如果碰到空节点，那么这时队列需要为空，否则不是完全二叉树</li>
                 <li class="line">后序遍历的递归栈存了正在访问的节点的所有祖先，如果要逐个访问其祖先，则可以使用数组栈，并用下标访问；</li>
+                <br><br>
                 <li class="line">后序线索树的后序遍历仍然需要栈的支持</li>
-                <li class="line">树的算法题的时间复杂度一般都是O(n),因为即使是递归遍历也是每个节点遍历一次</li>
+                <li class="line">树的算法题的时间复杂度一般都是O(n),因为即使是递归遍历也是每个节点遍历一次</li><br><br>
                 <li class="line">二叉树的遍历和应用</li>
                 <b>先序遍历非递归版本</b>
                 <pre
@@ -140,7 +145,7 @@
             </ul>
             <br>
 
-            <h2>第四章：图</h2>
+            <h2>第四章：图</h2><br>
             <ul>
                 <li class="line">
                     默认认为“有向图”是联通的，有向图邻接矩阵中，如果主对角线一下元素全为0，则其拓扑序列一定存在但不唯一（要会举例），如果主对角线以上元素全为1，主对角线以下元素全为0，则拓扑序列唯一;如果一个有向图存在有序拓扑排序序列，则其邻接矩阵一定是三角矩阵
@@ -150,14 +155,14 @@
                 <li class="line">“一个数字的含义是什么？”可以为“路径的条数”而不是“存在路径”</li>
                 <li class="line">图的应用题要把题目问的元素（比如每次选择的边）写清楚</li>
                 <li class="line">使用邻接表存储无向完全图需要n(n-1)个边界点，而使用邻接多重表需要n(n-1)/2个；</li>
-                <li class="line">强连通是针对有向图说的，连通是针对无向图说的，强连通分量是有向图的极大连通子图</li>
+                <li class="line">强连通是针对有向图说的，连通是针对无向图说的，强连通分量是有向图的极大连通子图</li><br><br>
                 <li class="line">AOV网只讨论拓扑排序，AOE网只讨论关键路径</li>
                 <li class="line">计算关键路径时需要仔细十以内加减法的正确性</li>
                 <li class="line">并不是任意顶点和任意边的组合都是子图，因为这样的组合可能不是图</li>
                 <li class="line">连通分量就是极大连通子图，强连通分量就是极大强连通（任意两个顶点之间都有互相到达的路径）子图</li>
                 <li class="line">极小连通子图是连通无向图的生成树。极小和极大是在满足连通的情况下，针对边的数目而言的。</li>
                 <li class="line">有向图顶点的度是入度和出度的和</li>
-                <li class="line">回路对应于路径，简单回路对应于简单路径</li>
+                <li class="line">回路对应于路径，简单回路对应于简单路径</li><br><br>
                 <li class="line">十字链表（有向图，弧用arc）：<br>
                     顶点节点：data、firstin、firstout <br>
                     弧节点：head_link, head, info, tail, tail_link（与下面的其实是类似的）</li>
@@ -185,7 +190,7 @@
                 <li class="line">Floyd算法求每对不同顶点之间最短路径时，允许弧上的权值为负，但不能有包含负权值边的回路</li>
                 <li class="line">
                     Kruskal算法要用到并查集（在选边之前先判断两个顶点是否属于同一个集合，如果是则不加入，如果不是，则加入并且把集合合并），无向图的连通性判断要用到并查集（遍历图的每个边，每次把边两端的顶点所在的集合合并，直到遍历完所有的边，如果只剩下一个集合则说明无向图是连通的，否则不连通）
-                </li>
+                </li><br><br>
                 <li class="line">图的遍历算法</li>
                 <b>广度优先遍历:</b>
                 <pre
@@ -199,13 +204,13 @@
             </ul>
             <br>
 
-            <h2>第五章：集合</h2>
+            <h2>第五章：集合</h2><br>
             <ul>
                 <li class="line">没有太多考察内容，要理解并查集的应用场景：Kruskal、无向图连通性的判断（逐个加边法）</li>
             </ul>
             <br>
 
-            <h2>第六章：查找</h2>
+            <h2>第六章：查找</h2><br>
             <ul>
                 <li class="line">查找失败的长度需要计算最后寻找空位的那一次；</li>
                 <li class="line">
@@ -214,9 +219,10 @@
                 <li class="line">在二叉排序树中计算查找长度的关键是画出二叉排序树</li>
                 <li class="line">二叉排序树是增加了排序性质的二叉树，因此算法题仍然是基于二叉树的递归特点，只是需要多考虑排序性质而已。</li>
                 <li class="line">注意二叉排序树的概念：根节点要小于右子树中所有节点，而不仅是要小于右子树的根（容易混淆）</li>
+                <br><br>
                 <li class="line">nh表示高度为h的平衡二叉树含有的最少节点数，则n1=1；n2=2；nh=(nh-1)+(nh-2)+1</li>
                 <li class="line">在平衡树中删除一个顶点再加入同一个顶点，得到的树可能相同，参考“1、2、3“，在开始重要善于直接写出实例</li>
-                <li class="line">注意平衡子树指的是平衡因子（h左-h右）小于等于1的子树（只差1仍是平衡的）</li>
+                <li class="line">注意平衡子树指的是平衡因子（h左-h右）小于等于1的子树（只差1仍是平衡的）</li><br><br>
                 <li class="line">红黑树的性质：<br>
                     每个节点或红或黑 <br>
                     根节点是黑色的 <br>
@@ -228,16 +234,16 @@
                     从根节点到叶节点最长路径不大于最短路径的2倍 <br>
                     红黑树将AVL树的“高度平衡”，降低到“任意节点左右子树的高度相差不超过两倍”
                 </li>
-                <li class="line">红黑树和AVL数的插入、查找、删除的平均复杂度都是O(log n)，但红黑树的统计性能更好</li>
+                <li class="line">红黑树和AVL数的插入、查找、删除的平均复杂度都是O(log n)，但红黑树的统计性能更好</li><br><br>
                 <li class="line">
                     B树的插入总体是在最下层堆积，堆不下了才往上溢；而删除（只会删除终端节点，要删除非终端节点时先用相邻的终端节点替代他然后在删除该终端节点）是在最下层沉淀，只要能沉下来就会把上面的往下沉，熟练掌握。
                 </li>
                 <li class="line">B树的所有终端节点的高度是一致的。</li>
-                <li class="line">具有n个关键字的B树应该有n+1个叶节点（即查找失败的外部节点）</li>
+                <li class="line">具有n个关键字的B树应该有n+1个叶节点（即查找失败的外部节点）</li><br><br>
                 <li class="line">B+树比B树更加适用于实际应用中的文件索引和数据库索引</li>
                 <li class="line">B+树每个索引项只包含对应子树的最大关键字和指向该子树的指针</li>
                 <li class="line">二叉查找树的画法要注意使用统一的方式：一般是向下取整</li>
-                <li class="line">注意提到二分查找树的时候，一般认为关键字是有序的，而是否随机分布决定了平均查找长度能否达到log(n)</li>
+                <li class="line">注意提到二分查找树的时候，一般认为关键字是有序的，而是否随机分布决定了平均查找长度能否达到log(n)</li><br><br>
                 <li class="line">散列表楚除留余数法选用的p一般是小于等于m的最大质数（留下一部分用来处理冲突）</li>
                 <li class="line">注意双散列法的第二个散列函数计算的是地址增量，Hi=(H(key)+i*Hash2(key))%m, i表示冲突次数</li>
                 <li class="line">散列表查找成功的平均查找长度与装填因子直接相关，与表长无关</li>
@@ -249,21 +255,21 @@
             </ul>
             <br>
 
-            <h2>第七章：排序</h2>
+            <h2>第七章：排序</h2><br>
             <ul>
                 <li class="line">快速排序每次划分后先处理短分区可以减小递归深度但不能减少递归次数；如果分区均衡，可以减少递归次数和运行时间。</li>
                 <li class="line">
                     Partirion函数如果没有递归z就没有递归深度，可以使用栈或者队列来实现快速排序的非递归算法，只要用栈或队列记录每次划分的两个端点，在下一次处理时取出即可，他们产生的顺序会不同</li>
-                <li class="line">要牢记的是quicksort和heapsort！！</li>
+                <li class="line">要牢记的是quicksort和heapsort！！</li><br><br>
                 <li class="line">荷兰国旗问题：即三数排序</li>
                 <img src="p4.jpg" alt="荷兰国旗问题" style="display: block; height: 280px; margin: 0 auto;">
                 <li class="line">构建n个记录的初始堆，其时间复杂度为O(n)（比较不直观，需要死记）</li>
                 <li class="line">堆排序属于选择排序，其思想为“每次从堆中选择最大的”，而堆的作用就是logn时间内找到最大的元素</li>
                 <li class="line">直接选择排序是不稳定的，基数排序（因为分配和回收处理不会影响同义词）和归并排序是稳定的</li>
                 <li class="line">归并排序需要会把两个数组并排放，依次比较，计算比较次数</li>
-                <img src="p5.png" alt="归并排序" style="display: block; height: 280px; margin: 0 auto;">
+                <img src="p5.png" alt="归并排序" style="display: block; height: 280px; margin: 0 auto;"><br><br>
                 <li class="line">关于分块排序：要弄清楚块与块之间的关系是怎样的，“仅块内有序”可以使用归并方式思考，二题中给出的是“块内无序，块间有序”，只需要块内排序即可。</li>
-                <img src="p6.png" alt="" style="display: block; height: 80px; margin: 0 auto;">
+                <img src="p6.png" alt="" style="display: block; height: 60px; margin: 0 auto;"><br><br>
                 <li class="line">要掌握的排序算法</li>
                 <b>简单插入排序</b>
                 <pre

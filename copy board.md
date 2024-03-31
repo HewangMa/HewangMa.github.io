@@ -1,0 +1,1 @@
+<img src="p7.png" alt="" style="display: block; margin: 0 auto; height: 240px;">
