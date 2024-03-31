@@ -87,9 +87,63 @@
             <br>
 
             <b>可见域剖面示意：</b>
-            <img src="imgs/view3.jpg" alt="可见域剖面示意" style="display:block; height:200px;margin: 0 auto;">
+            <img src="imgs/view3.jpg" alt="可见域剖面示意" style="display:block; height:250px;margin: 0 auto;">
+            <br>
+            <br>
+            <br>
         </div>
 
+        <!-- 使用GH实现可视化 -->
+        <div>
+            <h2>分步骤实现动态视域可视化</h2>
+            <p>这一部分的实现利用了grasshopper直接控制空间元素进行编程的特性，使用简洁的电池块就完成了投影、展开的复杂任务，并且保留了所有的中间结果，方便后续的渐变色填充。</p>
+            <br>
+            <b>偏移、等距取点：</b>
+            <img src="imgs/2.jpg" alt="偏移、等距取点" style="display:block; height:200px;margin: 0 auto;">
+            <br>
+            <b>投影到铁路曲面：</b>
+            <img src="imgs/3.jpg" alt="投影到铁路曲面" style="display:block; height:200px;margin: 0 auto;">
+            <br>
+            <b>将投影结果展开到平面上：</b>
+            <img src="imgs/1.jpg" alt="将投影结果展开到平面上" style="display:block; height:200px;margin: 0 auto;">
+            <br>
+            <b>最终立体效果：</b>
+            <div style="display: flex; justify-content: center; margin-top:10px;">
+                <img src="imgs/project2.png" alt="铁路直道处三维视线可视化" style="height:170px;margin: 0 10px;">
+                <img src="imgs/project.png" alt="铁路直道处三维视线可视化" style="height:170px;margin: 0 10px;">
+            </div>
+            <br>
+            <b>最终平面展开效果（部分）：</b>
+            <img src="imgs/layout.png" alt="最终平面展开效果" style="display:block; height:350px;margin: 0 auto;">
+            <br>
+            <p>
+                由于平面展开不改变点的等距特性，而投影会因为铁路的曲度而发生缩放，
+                所以最终展示的点之间的横向距离展示了铁路的曲率，而高低展示了不同
+                视线距离的山峦线。上图将不同的距离赋予不同的颜色，以更好的区分各
+                个距离.并且添加了用颜色区分的点距特征线，使得上述特性更加直观。
+            </p>
+            <br>
+        </div>
+
+        <!-- 后记 -->
+        <div>
+            <h2>后记</h2>
+            <br>
+            <p>
+                本次在闲置铁路资源的动态视域可视化项目中，我作为技术负责人主动完成了很多任务，
+                诸如地形数据文件格式调整、投影方法研究、最终效果展示等；也克服了很多困难，诸如
+                大尺度模型运行性能跟不上、大尺度可视化缩放失真等等问题。
+            </p>
+            <p>
+                铁路的动态视域在很多学科中都不是主流研究问题，甚至不被提起，但是这种空间操作的方法
+                值得很多别的项目借鉴，我希望我的工作能给更多人带去启发。
+            </p>
+            <br>
+            <br>
+        </div>
 
     </main>
+    <footer>
+        <p>&copy; 2024 Hewang's Tech Blog</p>
+    </footer>
 </body>
