@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gh-train-view</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="margin: 15% 15%;">
+    <header>
+        <h1>基于grasshopper的北京既有铁路闲置资源更新策略研究——视域生成</h1>
+        <br>
+        <p><b>作者 : 禾旺</b></p>
+        <p>
+            本文为论文：“王岳颐,高栩,李煜,等. 人工智能在多尺度城市空间设计中的应用与展望[J]. 城市发展研究,2023,30(7):中插27-中插34.
+            DOI:10.3969/j.issn.1006-3862.2023.07.016. ”的课题技术实现部分。
+        </p>
+        <p>
+            作者负责该论文的技术实现部分，研究完成铁路动态视域可视化关键技术的实现原理，负责铁路动态视域模型建立、效果表现、技术教学。基于grasshopper技术链接地形和视线元素，利用最近点算法计算点位、分析点位数据特征；
+        </p>
+        <p>
+            阅读全文大约花费十分钟。
+        </p>
+        <br>
+        <br>
+    </header>
+    <main>
+        <!-- 介绍 -->
+        <div>
+            <div>
+                <h2>视域生成技术背景</h2>
+                <br>
+                <p>
+                    对于北京门头沟区一段现有的铁路资源，如何开发他的后续利用价值是值得城市发展思考的问题。可以从以下几个角度探索其景观利用价值：
+                    山峦曲线、动态景观界面、远近变化感官等等，而这些在大尺度地形的情况下没有自动化生成技术断不能完成，因此基于grasshopper的视域生成模型应运而生。
+                </p>
+                <img src="imgs/railways.png" alt="门头沟区闲置铁路资源现状卫星图" style="display: block;height:250px;margin:0 auto;">
+                <br>
+            </div>
+
+            <div>
+                <h2>Rhino 和 Grasshopper 简介</h2>
+                <br>
+                <p>
+                    Rhino 和 Grasshopper 是两个由 McNeel & Associates 开发的建模工具，主要用于计算机辅助设计（CAD）和计算机辅助制造（CAM）领域。
+                </p>
+                <b> Rhino：</b>
+                <p>
+                    Rhino 是一款三维建模工具，也被称为 Rhinoceros 3D。它是一个强大且灵活的建模软件，适用于从简单几何体到复杂曲面的各种设计和建模需求。
+                    Rhino 提供了丰富的建模工具和功能，包括绘制、编辑、分析、渲染等，可用于创建各种类型的三维模型，如产品设计、建筑模型、工业设计等。
+                </p>
+                <b>Grasshopper：</b>
+                <p>
+                    Grasshopper 是 Rhino 的可视化编程插件，提供了一种基于节点和连接的图形化编程环境。它使用户能够通过拖拽和连接节点来创建复杂的算法和程序，而无需编写传统的文本代码。
+                    Grasshopper 的强大之处在于其可视化编程方式，使得算法设计和参数化建模变得更加直观和灵活。用户可以通过调整参数和修改连接来快速迭代和优化设计。
+                </p>
+                <p>
+                    Grasshopper 与 Rhino 紧密集成，可以直接在 Rhino 界面中使用，并且能够利用 Rhino 的建模工具和功能进行模型的创建和编辑。
+                </p>
+            </div>
+            <br>
+            <br>
+
+        </div>
+
+        <!-- 原理 -->
+        <div>
+            <h2>火车视线原理示意</h2>
+            <br>
+            <p>
+                为了更好的开发铁路途径山区的景观，我们应当了解人在火车上看到外部景观的视线时如何的，如果能够将所见之景展示在二维平面上，那么将对景观开发有很好的指导作用。
+            </p>
+            <b>铁路转弯处三维视线可视化：</b>
+            <div style="display: flex;justify-content: center;margin-top:10px;">
+                <img src="imgs/view1.jpg" alt="铁路转弯处三维视线可视化" style="height:170px;margin: 0 10px;">
+                <img src="imgs/view1c.jpg" alt="铁路转弯处三维视线可视化" style="height:170px;margin: 0 10px;">
+            </div>
+            <br>
+
+            <b>铁路直道处三维视线可视化：</b>
+            <div style="display: flex; justify-content: center; margin-top:10px;">
+                <img src="imgs/view2c.jpg" alt="铁路直道处三维视线可视化" style="height:170px;margin: 0 10px;">
+                <img src="imgs/view2.jpg" alt="铁路直道处三维视线可视化" style="height:170px;margin: 0 10px;">
+            </div>
+            <br>
+
+            <b>可见域剖面示意：</b>
+            <img src="imgs/view3.jpg" alt="可见域剖面示意" style="display:block; height:200px;margin: 0 auto;">
+        </div>
+
+        
+    </main>
+</body>
