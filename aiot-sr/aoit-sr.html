@@ -10,7 +10,7 @@
 
 <body style="margin: 18% 18%;">
     <header>
-        <h1>基于小米AIOT平台的语言和声纹识别系统——声纹识别部分</h1>
+        <h1>基于小米AIOT平台的语言和声纹识别系统</h1>
         <br>
         <p><b>作者 : 禾旺</b></p>
         <p> 本文来自于中国科学技术大学软件学院研究生工程实践项目 “基于小米AIOT平台的语言和声纹识别系统”，该项目依托于成熟的小米AIOT平台，由李春杰老师指导，由作者担任小组长完成。 </p>
@@ -47,17 +47,113 @@
             <a href="https://HewangMa.github.io/aiot-sr/research1.pdf">点击链接查看文件</a>
             <h2>声纹识别研究现状</h2>
             <a href="https://HewangMa.github.io/aiot-sr/research2.pdf">点击链接查看文件</a>
+            <h2>嵌入式设备基本信息</h2>
+            <img src="imgs/p8.png" alt="" style="display: block;height:240px;margin:0 auto;">
+            <img src="imgs/p9.png" alt="" style="display: block;height:240px;margin:0 auto;">
+            <img src="imgs/p10.png" alt="" style="display: block;height:240px;margin:0 auto;">
         </div><br><br><br>
 
         <!-- 工程进展 -->
         <div>
             <h2>语音识别模型和使用（和小组成员一同完成）</h2>
-            
+            <p>
+                <b>成果：</b>
+                使用kaldi工具创建了全新的传统DNN + HMM模型，在thchs-30，30小时中文语音数据集上，训练得到 DNN 音素预测frame准确率: 60.2967%，DNN + HMM
+                预测对数似然指数 为2.53658。
+            </p>
+            <br><br>
+        </div>
+
+        <div>
+            <h2>声纹识别模型和使用</h2>
+            <br>
+            <b>声纹识别使用平台：pytorch</b>
+            <br><br>
+            <b>声纹识别使用数据集：HiMia</b>
+            <p>该数据用于2019年AISHELL演讲者验证挑战赛。使用同样的文本“HiMia”。它是一个智能家居场景下的固有唤醒词数据库。该数据库共包含340个说话人，每个说话人语料包含了近场麦克风拾音和远场麦克风阵列的多通道拾音。它可用于声纹识别、语音唤醒识别等研究。整个数据集分为训练集（254人），开发集（42人）和测试集（44人）。
+            </p><br>
+
+            <b>Step1：特征提取：在读取数据的时候使用librosa完成特征提取</b><br>
+            <pre
+                style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(106, 115, 125); font-weight: 400;"># 在读取数据集的时候就完成特征提取</span></li><li><span style="color: rgb(215, 58, 73); font-weight: 400;">class</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">VoiceDataset</span>(<span style="color: rgb(111, 66, 193); font-weight: 400;">Dataset</span>):</li><li>&nbsp; &nbsp; <span style="color: rgb(215, 58, 73); font-weight: 400;">def</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">extract_features</span>(<span style="color: rgb(36, 41, 46); font-weight: 400;">self, file_path</span>):</li><li>&nbsp; &nbsp; &nbsp; &nbsp; audio, sr = librosa.load(file_path)</li><li>&nbsp; &nbsp; &nbsp; &nbsp; mfccs = librosa.feature.mfcc(y=audio, sr=sr, n_mfcc=<span style="color: rgb(0, 92, 197); font-weight: 400;">32</span>)</li><li>&nbsp; &nbsp; &nbsp; &nbsp; mfccs_mean = np.mean(mfccs.T, axis=<span style="color: rgb(0, 92, 197); font-weight: 400;">0</span>)</li><li>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> mfccs_mean</li></ol></pre>
+
+            <br><br><br><b>Step2：设计模型，选用多种模型进行比对之后发现有价值的模型有以下两种</b><br><br>
+
+            <b>声纹识别使用模型一：使用简单的NN，抛出一个曳光弹，让模型从wav文件到预测准确率跑通。</b>
+            <pre
+                style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(106, 115, 125); font-weight: 400;"># 模型一：</span></li><li><span style="color: rgb(215, 58, 73); font-weight: 400;">class</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">NN_net</span>(nn.Module):</li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">def</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">__init__</span>(<span style="color: rgb(36, 41, 46); font-weight: 400;">self, input_size=<span style="color: rgb(0, 92, 197); font-weight: 400;">20</span>, hidden_size=<span style="color: rgb(0, 92, 197); font-weight: 400;">16</span>, num_classes=<span style="color: rgb(0, 92, 197); font-weight: 400;">8</span></span>):</li><li>        <span style="color: rgb(227, 98, 9); font-weight: 400;">super</span>(NN_net, self).__init__()</li><li>        self.fc1 = nn.Linear(input_size, hidden_size)</li><li>        self.fc2 = nn.Linear(hidden_size, num_classes)</li><li>        self.relu = nn.ReLU()</li><li></li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">def</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">forward</span>(<span style="color: rgb(36, 41, 46); font-weight: 400;">self, x</span>):</li><li>        out = self.fc2(self.relu(self.fc1(x)))</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> out</li></ol></pre>
+            <b>声纹识别使用模型二：使用LSTM模型，试图在小参数量的情况下适当提高准确率。 </b><br>
+            <p>
+                <b>长短期记忆（Long short-term memory,LSTM）</b>
+                是一种特殊的RNN，主要是为了解决长序列训练过程中的梯度消失和梯度爆炸问题。简单来说，就是相比普通的RNN，LSTM能够在更长的序列中有更好的表现，更加适合处理语音、声纹类序列数据。
+            </p>
+            <img src="imgs/p12.png" alt="" style="display: block;height:120px;margin:0 auto;">
+            <pre
+                style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(106, 115, 125); font-weight: 400;"># 模型二：</span></li><li><span style="color: rgb(215, 58, 73); font-weight: 400;">class</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">LSTM_net</span>(nn.Module):</li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">def</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">__init__</span>(<span style="color: rgb(36, 41, 46); font-weight: 400;">self, input_size=<span style="color: rgb(0, 92, 197); font-weight: 400;">32</span>, hidden_size=<span style="color: rgb(0, 92, 197); font-weight: 400;">16</span>, num_layers=<span style="color: rgb(0, 92, 197); font-weight: 400;">1</span>, nums_class=<span style="color: rgb(0, 92, 197); font-weight: 400;">16</span></span>):</li><li>        <span style="color: rgb(227, 98, 9); font-weight: 400;">super</span>(LSTM_net, self).__init__()</li><li>        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=<span style="color: rgb(0, 92, 197); font-weight: 400;">True</span>)</li><li>        self.fc = nn.Linear(hidden_size, nums_class)</li><li></li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">def</span> <span style="color: rgb(111, 66, 193); font-weight: 400;">forward</span>(<span style="color: rgb(36, 41, 46); font-weight: 400;">self, x</span>):</li><li>        out, hidden = self.lstm(x)</li><li>        <span style="color: rgb(106, 115, 125); font-weight: 400;"># print(f"out:{out.shape},out: {out}")</span></li><li>        out = self.fc(out)</li><li>        <span style="color: rgb(215, 58, 73); font-weight: 400;">return</span> out</li></ol></pre>
+            <br><br> <b>Step3：训练模型，在多次训练对比结果之后选择如下参数，并在训练结束保存模型参数</b><br>
+            <pre
+                style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(106, 115, 125); font-weight: 400;"># 参数</span></li><li>criterion = nn.CrossEntropyLoss()</li><li>epochs = <span style="color: rgb(0, 92, 197); font-weight: 400;">2000</span></li><li>optimizer = optim.SGD(net.parameters(), lr=<span style="color: rgb(0, 92, 197); font-weight: 400;">0.01</span>)</li></ol></pre>
+            <pre
+                style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(106, 115, 125); font-weight: 400;"># 训练</span></li><li><span style="color: rgb(215, 58, 73); font-weight: 400;">for</span> e <span style="color: rgb(215, 58, 73); font-weight: 400;">in</span> <span style="color: rgb(227, 98, 9); font-weight: 400;">range</span>(epochs):</li><li>    net.train()</li><li>    running_loss = <span style="color: rgb(0, 92, 197); font-weight: 400;">0.0</span></li><li>    <span style="color: rgb(215, 58, 73); font-weight: 400;">for</span> inputs, labels <span style="color: rgb(215, 58, 73); font-weight: 400;">in</span> train_loader:</li><li>        optimizer.zero_grad()</li><li>        outputs = net(inputs)</li><li>        loss = criterion(outputs, labels)</li><li>        loss.backward()</li><li>        optimizer.step()</li></ol></pre>
+            <br><br> <b>Step4：模型推理，输出模型预测结果</b><br><br>
+
+            <b>模型一运行结果：</b>
+            <p style="font-weight: lighter;">
+                finished data loading, on device cuda <br>
+                Epch [801/1200], Loss: 0.09994715967774391 <br>
+                Epch [901/1200], Loss: 0.08571631053835153 <br>
+                Epch [1001/1200], Loss: 0.0740496346950531 <br>
+                Epch [1101/1200], Loss: 0.06443944316357374 <br>
+                pred:[ 7 10  3 ...  4  5  9] <br>
+                true:[ 7 10  3 ...  4  5  9]
+                <b>get acc:0.86825  (~ 0.89) （不同参数的结果）</b>
+            </p>
+            <b>模型一混淆矩阵：</b>
+            <img src="imgs/p11.png" alt="" style="display: block;height:250px;margin:0 auto;">
+            <b>模型二运行结果：</b>
+            <p style="font-weight: lighter;">Epoch [1301/2000], Loss: 0.007107637634835556 <br>
+                Epoch [1501/2000], Loss: 0.005706332181228693 <br>
+                Epoch [1701/2000], Loss: 0.004725779324189716 <br>
+                Epoch [1901/2000], Loss: 0.004006153799497649 <br>
+                pred:[ 6 15 11 ... 12 14 18] <br>
+                true:[ 6 15 11 ... 12 14  5]
+                <b>get acc:0.902032 ~ 0.9390625</b>
+            </p><br>
+            <b>模型二混淆矩阵：</b>
+            <img src="imgs/p13.png" alt="" style="display: block;height:250px;margin:0 auto;">
+
+            <br><br><b>Step5：模型转换，将模型文件转换为嵌入式设备能够运行的格式</b><br><br>
+            <p>由于要在嵌入式设备上运行模型，需要将pytorch模型转换为onnx格式，该格式有如下优点：<br>
+            <ul>
+                <li>跨平台兼容性（嵌入式设备、PC）；</li>
+                <li>框架无关性（pytorch、tensorflow等）；</li>
+                <li>轻量级部署等等；</li>
+            </ul>
+            </p>
+            <pre
+                style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(106, 115, 125); font-weight: 400;"># 导出为onnx</span></li><li>dummy_input = torch.randn(<span style="color: rgb(0, 92, 197); font-weight: 400;">16</span>, <span style="color: rgb(0, 92, 197); font-weight: 400;">32</span>) <span style="color: rgb(106, 115, 125); font-weight: 400;"># 虚拟输入张量</span></li><li>torch.onnx.export(</li><li>    net,</li><li>    dummy_input,</li><li>    f=onnx_path,</li><li>    verbose=<span style="color: rgb(0, 92, 197); font-weight: 400;">True</span>,</li><li>    input_names=[<span style="color: rgb(3, 47, 98); font-weight: 400;">"input"</span>],</li><li>    output_names=[<span style="color: rgb(3, 47, 98); font-weight: 400;">"output"</span>],</li><li>)</li></ol></pre>
+            <pre
+                style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(106, 115, 125); font-weight: 400;"># 读取onnx模型</span></li><li>net = LSTM_net(input_size=<span style="color: rgb(0, 92, 197); font-weight: 400;">32</span>, hidden_size=<span style="color: rgb(0, 92, 197); font-weight: 400;">16</span>, num_layers=<span style="color: rgb(0, 92, 197); font-weight: 400;">1</span>, nums_class=<span style="color: rgb(0, 92, 197); font-weight: 400;">16</span>)</li><li>net.load_state_dict(torch.load(<span style="color: rgb(3, 47, 98); font-weight: 400;">"model_weights-16-0.90.pth"</span>))</li><li>net.<span style="color: rgb(227, 98, 9); font-weight: 400;">eval</span>()</li></ol></pre>
+
+            <br><br> <b>Step6：运行onnx模型文件，在嵌入式平台上空间有限，故使用onnx模型时不导入torch，只使用以上基础库</b><br><br>
+            <pre
+                style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(215, 58, 73); font-weight: 400;">import</span> numpy <span style="color: rgb(215, 58, 73); font-weight: 400;">as</span> np</li><li><span style="color: rgb(215, 58, 73); font-weight: 400;">import</span> onnxruntime</li><li><span style="color: rgb(215, 58, 73); font-weight: 400;">from</span> sklearn.metrics <span style="color: rgb(215, 58, 73); font-weight: 400;">import</span> accuracy_score</li><li><span style="color: rgb(215, 58, 73); font-weight: 400;">from</span> sklearn.preprocessing <span style="color: rgb(215, 58, 73); font-weight: 400;">import</span> StandardScaler</li><li><span style="color: rgb(215, 58, 73); font-weight: 400;">import</span> librosa</li></ol></pre>
+            <p>在嵌入式平台上使用同样的特征提取+数据读取，并进行预测、计算准确率。 </p>
+            <pre
+                style="font-family:monospace;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(215, 58, 73); font-weight: 400;">for</span> inputs, labels <span style="color: rgb(215, 58, 73); font-weight: 400;">in</span> test_loader:</li><li>&nbsp; &nbsp; outputs = session.run(<span style="color: rgb(0, 92, 197); font-weight: 400;">None</span>, {<span style="color: rgb(3, 47, 98); font-weight: 400;">"input"</span>: inputs})</li><li>&nbsp; &nbsp; predicted_labels.extend(np.argmax(outputs[<span style="color: rgb(0, 92, 197); font-weight: 400;">0</span>], axis=<span style="color: rgb(0, 92, 197); font-weight: 400;">1</span>))</li><li>&nbsp; &nbsp; true_labels.extend(labels)</li></ol></pre>
+            <br> <b>LSTM模型onnx格式在地平线RDK上的运行结果(历时大约100秒)：</b>
+            <p>
+                pred:[ 1 10 13 ...  3 10 12] <br>
+                true:[ 1 10 13 ...  3 10 12] <b>get acc:0.9063125 </b>
+            </p>
+
         </div>
 
         <!-- 后记 -->
         <div>
+            <!-- 待增加 -->
             <h2>后记</h2>
+            <p></p>
             <br>
             <br>
             <br>
