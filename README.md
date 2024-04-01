@@ -1,6 +1,6 @@
 # Introduction to Ma Hewang's work
 
-### [2024-4:  基于小米AIOT平台的语言和声纹识别系统]()
+### [2024-4:  基于小米AIOT平台的语言和声纹识别系统](https://HewangMa.github.io/aiot-sr/aiot-sr.html)
 
 ### [2024-3：Thoughts and Experience on Solving Project Euler](https://HewangMa.github.io/project-euler/project-euler.html)
 
