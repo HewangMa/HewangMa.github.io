@@ -10,8 +10,8 @@
 
 ### [2023-3：Summary of Basic Details of Computer Science](http://htmlpreview.github.io/?https://github.com/HewangMa/blog/blob/main/Summary-of-basic-details-of-computer-science/index.html)
 
-### [2023-3：Summary of Advanced Mathematics and Linear Algebra Methods and Details](http://htmlpreview.github.io/?https://github.com/HewangMa/blog/blob/main/Summary-of-basic-details-of-computer-science/index.html)
-<!-- 待修改连接 -->
+### [2023-3：Summary of Advanced Mathematics and Linear Algebra Methods and Details](http://htmlpreview.github.io/?https://github.com/HewangMa/blog/blob/main/Summary-of-advanced-mathematics-and-linear-algebra-methods-and-details/index.html)
+
 
 ### [2024-3: 基于Discuz！的考研学习教育网站](https://www.drtcsol.cn/)
 
