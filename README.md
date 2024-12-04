@@ -1,7 +1,5 @@
 # Things you may be interested in
 
-# [Tech blog](blogs/README.md)
+# [Blogs](blogs/readme.md)
 
-# [Session](blogs/session/readme.md)
-
-# [Waken](https://github.com/HewangMa/Waken)
+# [Ideas](ideas/readme.md)
