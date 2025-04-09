@@ -1,0 +1,8 @@
+testsize:1000, sum_of_p:984
+testsize:10000, sum_of_p:3688
+testsize:100000, sum_of_p:51406
+testsize:1000000, sum_of_p:716032
+testsize:10000000, sum_of_p:9973078
+testsize:1000000000, sum_of_p:312532314457237943 x
+testsize:1000000000, sum_of_p:312530319954683775 x
+testsize:1000000000, sum_of_p:518408346

@@ -1,0 +1,974 @@
+[
+    {
+        "label": "bisect",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "bisect",
+        "description": "bisect",
+        "detail": "bisect",
+        "documentation": {}
+    },
+    {
+        "label": "math,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math.",
+        "description": "math.",
+        "detail": "math.",
+        "documentation": {}
+    },
+    {
+        "label": "collections",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "collections",
+        "description": "collections",
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "copy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "copy",
+        "description": "copy",
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Queue",
+        "importPath": "queue",
+        "description": "queue",
+        "isExtraImport": true,
+        "detail": "queue",
+        "documentation": {}
+    },
+    {
+        "label": "Queue",
+        "importPath": "queue",
+        "description": "queue",
+        "isExtraImport": true,
+        "detail": "queue",
+        "documentation": {}
+    },
+    {
+        "label": "Queue",
+        "importPath": "queue",
+        "description": "queue",
+        "isExtraImport": true,
+        "detail": "queue",
+        "documentation": {}
+    },
+    {
+        "label": "heapq",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "heapq",
+        "description": "heapq",
+        "detail": "heapq",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "findLongestChain",
+        "importPath": "p646",
+        "description": "p646",
+        "isExtraImport": true,
+        "detail": "p646",
+        "documentation": {}
+    },
+    {
+        "label": "itertools",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "itertools",
+        "description": "itertools",
+        "detail": "itertools",
+        "documentation": {}
+    },
+    {
+        "label": "cmp_to_key",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.1686",
+        "description": "leetcode_py.1686",
+        "peekOfCode": "class Solution:\n    def stoneGameVI(self, aliceValues, bobValues):\n        pass",
+        "detail": "leetcode_py.1686",
+        "documentation": {}
+    },
+    {
+        "label": "SortedStack",
+        "kind": 6,
+        "importPath": "leetcode_py.p0305",
+        "description": "leetcode_py.p0305",
+        "peekOfCode": "class SortedStack:\n    def __init__(self):\n        self.st = []  # decreasing\n        self.ot = []  # increasing\n    def push(self, val: int) -> None:\n        while self.st and self.st[-1] < val:\n            self.ot.append(self.st[-1])\n            self.st.pop()\n        self.st.append(val)\n        while self.ot and self.ot[-1] < self.st[-1]:",
+        "detail": "leetcode_py.p0305",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p0513",
+        "description": "leetcode_py.p0513",
+        "peekOfCode": "class Solution:\n    def solve0(self, heights):\n        n = len(heights)\n        ret = 0\n        for i in range(n):\n            for j in range(i + 1, n):\n                ret = max(ret, min(heights[i], heights[j]) * (j - i))\n        return ret\n    def solve(self, heights):\n        n = len(heights)",
+        "detail": "leetcode_py.p0513",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1081",
+        "description": "leetcode_py.p1081",
+        "peekOfCode": "class Solution:\n    def smallestSubsequence(self, s: str) -> str:\n        cnt = [s.count(chr(97 + i)) for i in range(26)]\n        st = []\n        for d in s:\n            cnt[ord(d) - 97] -= 1\n            if d in st:\n                continue\n            while st and st[-1] > d and cnt[ord(st[-1]) - 97] > 0:\n                st.pop()",
+        "detail": "leetcode_py.p1081",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1140",
+        "description": "leetcode_py.p1140",
+        "peekOfCode": "class Solution:\n    # 害，就这样吧\n    def res(self, piles, M):\n        # 先手者在piles中能获得的最大石子数\n        n = len(piles)\n        if 2 * M >= n:\n            return sum(piles)\n        for x in range(1, 2 * M + 1):\n            pass\n    def stoneGameII(self, piles):",
+        "detail": "leetcode_py.p1140",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1235",
+        "description": "leetcode_py.p1235",
+        "peekOfCode": "class Solution:\n    class job:\n        def __init__(self, s, e, p):\n            self.s = s\n            self.e = e\n            self.p = p\n        def __str__(self) -> str:\n            return f\"s={self.s}, e={self.e}, p={self.p};\"\n    def jobScheduling(self, startTime, endTime, profit):\n        n = len(startTime)",
+        "detail": "leetcode_py.p1235",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p12776",
+        "description": "leetcode_py.p12776",
+        "peekOfCode": "class Solution:\n    def numOfBurgers(self, tomatoSlices, cheeseSlices):\n        if tomatoSlices > cheeseSlices * 4 or tomatoSlices < cheeseSlices * 2:\n            return []\n        if tomatoSlices % 2 == 1:\n            return []\n        j = (tomatoSlices - cheeseSlices * 2) // 2\n        s = cheeseSlices - j\n        return [j, s]",
+        "detail": "leetcode_py.p12776",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1289",
+        "description": "leetcode_py.p1289",
+        "peekOfCode": "class Solution:\n    def minFallingPathSum(self, grid: list[list[int]]) -> int:\n        n = len(grid)\n        dp = []\n        ans = sum([grid[i][i] for i in range(n)])\n        dp.append(grid[0])\n        for i in range(1, n):\n            temp = [100 * (i + 1) for x in range(n)]\n            for j in range(n):\n                for k in range(n):",
+        "detail": "leetcode_py.p1289",
+        "documentation": {}
+    },
+    {
+        "label": "Solution0",
+        "kind": 6,
+        "importPath": "leetcode_py.p1349",
+        "description": "leetcode_py.p1349",
+        "peekOfCode": "class Solution0:\n    def __init__(self) -> None:\n        self.curr_students = 0\n        self.max_students = 0\n        self.print_tag = False\n    def valid(self, seats, i, j):\n        if seats[i][j] != \".\":\n            return False\n        m = len(seats[0])\n        left_ok = True if (j == 0 or seats[i][j - 1] != \"s\") else False",
+        "detail": "leetcode_py.p1349",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1349",
+        "description": "leetcode_py.p1349",
+        "peekOfCode": "class Solution:\n    def __init__(self) -> None:\n        self.curr_students = 0\n        self.max_students = 0\n        self.print_tag = False\n    def valid(self, seats, i, j):\n        if seats[i][j] != \".\":\n            return False\n        m = len(seats[0])\n        left_ok = True if (j == 0 or seats[i][j - 1] != \"s\") else False",
+        "detail": "leetcode_py.p1349",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p152",
+        "description": "leetcode_py.p152",
+        "peekOfCode": "class Solution:\n    def maxProduct(self, nums: list[int]) -> int:\n        n = len(nums)\n        if n == 1:\n            return nums[0]\n        dp = [[n, n] for n in nums]\n        # dp[i] = (max, min) represent the max and min proc end with nums[i]\n        ret = max(0, dp[0][0])\n        for i in range(1, n):\n            max_pre = dp[i - 1][0]",
+        "detail": "leetcode_py.p152",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p153",
+        "description": "leetcode_py.p153",
+        "peekOfCode": "class Solution:\n    def findMin(self, nums: list[int]) -> int:\n        low = 0\n        high = len(nums) - 1\n        while low < high:\n            mid = low + (high - low) // 2\n            print(mid)\n            if nums[mid] < nums[high]:\n                high = mid\n            else:",
+        "detail": "leetcode_py.p153",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1535",
+        "description": "leetcode_py.p1535",
+        "peekOfCode": "class Solution:\n    def getWinner(self, arr, k):\n        if k>=len(arr):\n            return max(arr)\n        win_time = {}\n        que = deque(arr)\n        # print(len(que))\n        while que:\n            p1 = que.popleft()\n            p2 = que.popleft()",
+        "detail": "leetcode_py.p1535",
+        "documentation": {}
+    },
+    {
+        "label": "Solution0",
+        "kind": 6,
+        "importPath": "leetcode_py.p1542",
+        "description": "leetcode_py.p1542",
+        "peekOfCode": "class Solution0:\n    def valid(self, s, i, j, dpc):\n        odd_appear = 0\n        for digit in range(10):\n            pre = dpc[digit][i - 1] if i > 0 else 0\n            if (dpc[digit][j] - pre) % 2 == 1:\n                odd_appear += 1\n                if odd_appear >= 2:\n                    return False\n        return True",
+        "detail": "leetcode_py.p1542",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1542",
+        "description": "leetcode_py.p1542",
+        "peekOfCode": "class Solution:\n    def earliest_pos(self, s, cnt):\n        i = 0\n        while sum(cnt) >= 2:\n            pop = int(s[i])\n            cnt[pop] = 1 - cnt[pop]\n            i += 1\n        return i\n    def longestAwesome(self, s):\n        n = len(s)",
+        "detail": "leetcode_py.p1542",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1553",
+        "description": "leetcode_py.p1553",
+        "peekOfCode": "class Solution:\n    def __init__(self) -> None:\n        self.dic = {}\n    def dec_three(self, n):\n        cnt = 0\n        while n > 0:\n            if n % 3 == 0:\n                n = n // 3\n            elif n % 3 == 1:\n                n -= 1",
+        "detail": "leetcode_py.p1553",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1599",
+        "description": "leetcode_py.p1599",
+        "peekOfCode": "class Solution:\n    def p_stop_now(self, circle, land_pos, curr_profit, runningCost):\n        tar = (land_pos + 3) % 4\n        while circle[tar] == 0 and tar != land_pos:\n            tar = (tar + 3) % 4\n        return curr_profit - ((tar - land_pos + 4) % 4) * runningCost\n    def rearrange(self, customers):\n        save = 0\n        for i, c in enumerate(customers):\n            if c == 4:",
+        "detail": "leetcode_py.p1599",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1609",
+        "description": "leetcode_py.p1609",
+        "peekOfCode": "class Solution:\n    def isEvenOddTree(self, root):\n        que = Queue()\n        node = root\n        que.put(node)\n        level = 0\n        while que:\n            size = que.qsize()\n            print(que)\n            if level % 2 == 0:",
+        "detail": "leetcode_py.p1609",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p162",
+        "description": "leetcode_py.p162",
+        "peekOfCode": "class Solution:\n    def findPeakElement(self, nums):\n        n = len(nums)\n        left, right = 0, n - 1\n        while left < right:\n            mid = (left + right) // 2\n            if nums[mid] < nums[mid + 1]:\n                left = mid + 1\n            else:\n                right = mid",
+        "detail": "leetcode_py.p162",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1671",
+        "description": "leetcode_py.p1671",
+        "peekOfCode": "class Solution:\n    def minimumMountainRemovals(self, nums):\n        n = len(nums)\n        left = [1 for _ in range(n)]\n        # left[i] 表示以i为山峰的左边的最长长度，即最长递增子序列\n        for i in range(1, n):\n            for j in range(i):\n                if nums[j] < nums[i]:\n                    left[i] = max(left[i], left[j] + 1)\n        right = [1 for _ in range(n)]",
+        "detail": "leetcode_py.p1671",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1673",
+        "description": "leetcode_py.p1673",
+        "peekOfCode": "class Solution:\n    def mostCompetitive0(self, nums, k):\n        # 应当使用贪心策略\n        if k == 0:\n            return []\n        h = []\n        n = len(nums)\n        for i, num in enumerate(nums):\n            heapq.heappush(h, (num, i))\n        num, i = h[0]",
+        "detail": "leetcode_py.p1673",
+        "documentation": {}
+    },
+    {
+        "label": "old_depth",
+        "kind": 5,
+        "importPath": "leetcode_py.p1673",
+        "description": "leetcode_py.p1673",
+        "peekOfCode": "old_depth = sys.getrecursionlimit()\nnew_depth = 82630\nsys.setrecursionlimit(new_depth)\nprint(f\"old:{old_depth}, new: {sys.getrecursionlimit()}\")\nclass Solution:\n    def mostCompetitive0(self, nums, k):\n        # 应当使用贪心策略\n        if k == 0:\n            return []\n        h = []",
+        "detail": "leetcode_py.p1673",
+        "documentation": {}
+    },
+    {
+        "label": "new_depth",
+        "kind": 5,
+        "importPath": "leetcode_py.p1673",
+        "description": "leetcode_py.p1673",
+        "peekOfCode": "new_depth = 82630\nsys.setrecursionlimit(new_depth)\nprint(f\"old:{old_depth}, new: {sys.getrecursionlimit()}\")\nclass Solution:\n    def mostCompetitive0(self, nums, k):\n        # 应当使用贪心策略\n        if k == 0:\n            return []\n        h = []\n        n = len(nums)",
+        "detail": "leetcode_py.p1673",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1901",
+        "description": "leetcode_py.p1901",
+        "peekOfCode": "class Solution:\n    def find_left(self, row):\n        n = len(row)\n        left, right = 0, n - 1\n        while left < right:\n            mid = math.ceil((left + right) / 2)\n            if row[mid] < row[mid - 1]:\n                right = mid - 1\n            else:\n                left = mid",
+        "detail": "leetcode_py.p1901",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1944",
+        "description": "leetcode_py.p1944",
+        "peekOfCode": "class Solution:\n    def canSeePersonsCount(self, heights: list[int]) -> list[int]:\n        q = []\n        ans = [0] * n\n        n = len(heights)\n        for i, x in enumerate(heights):\n            while q and q[-1] <= x:\n                ans[q.pop()] += 1\n            if q:\n                ans[q[-1]] += 1",
+        "detail": "leetcode_py.p1944",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1953",
+        "description": "leetcode_py.p1953",
+        "peekOfCode": "class Solution:\n    def numberOfWeeks(self, milestones):\n        n = len(milestones)\n        if n < 2:\n            return 1\n        # big head heap\n        h = []\n        for m in milestones:\n            heapq.heappush(h, -m)\n        ret = 0",
+        "detail": "leetcode_py.p1953",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1954",
+        "description": "leetcode_py.p1954",
+        "peekOfCode": "class Solution:\n    def apples_from(self, half_len):\n        line = (1 + half_len) * half_len // 2\n        return line * (half_len * 8 + 4)\n    def minimumPerimeter(self, neededApples):\n        left, right = 0, 500000\n        while left < right:\n            mid = (left + right) // 2\n            contains = self.apples_from(mid)\n            if contains == neededApples:",
+        "detail": "leetcode_py.p1954",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1962",
+        "description": "leetcode_py.p1962",
+        "peekOfCode": "class Solution:\n    def minStoneSum(self, piles, k):\n        heap = []\n        for p in piles:\n            heapq.heappush(heap, (-p // 2, p % 2, p))\n        while k > 0:\n            k -= 1\n            p = heap[0][2]\n            heapq.heappop(heap)\n            p = p - p // 2",
+        "detail": "leetcode_py.p1962",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p1997",
+        "description": "leetcode_py.p1997",
+        "peekOfCode": "class Solution:\n    def firstDayBeenInAllRooms(self, nextVisit):\n        visit_time = {}\n        n = len(nextVisit)\n        room = 0\n        day = 0\n        magic = 1000000007\n        while True:\n            print(f\"visit {room},time: {visit_time}\")\n            if room not in visit_time:",
+        "detail": "leetcode_py.p1997",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2071",
+        "description": "leetcode_py.p2071",
+        "peekOfCode": "class Solution:\n    def maxTaskAssign(self, tasks, workers, pills, strength):\n        def satisfy(k):\n            p = pills\n            k_tasks = tasks[:k]\n            k_workers = workers[len(workers) - k :]\n            for j in range(k - 1, -1, -1):\n                if k_tasks[j] <= k_workers[-1]:\n                    k_workers.pop()\n                else:",
+        "detail": "leetcode_py.p2071",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2079",
+        "description": "leetcode_py.p2079",
+        "peekOfCode": "class Solution:\n    def wateringPlants(self, plants, capacity):\n        n = len(plants)\n        steps = 0\n        pos = 0\n        velum = capacity\n        while pos < n:\n            if velum >= plants[pos]:\n                velum -= plants[pos]\n                steps += 1",
+        "detail": "leetcode_py.p2079",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2225",
+        "description": "leetcode_py.p2225",
+        "peekOfCode": "class Solution:\n    def findWinners(self, matches):\n        ans = [[], []]\n        # 没有输掉任何一场比赛的玩家\n        # 恰好输掉一场比赛的玩家\n        win = {}\n        lose = {}\n        for m in matches:\n            if m[0] in win:\n                win[m[0]] += 1",
+        "detail": "leetcode_py.p2225",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2391",
+        "description": "leetcode_py.p2391",
+        "peekOfCode": "class Solution:\n    def garbageCollection(self, garbage, travel):\n        n = len(garbage)\n        last_m_pos, last_g_pos, last_p_pos = n - 1, n - 1, n - 1\n        while last_m_pos >= 0 and garbage[last_m_pos].count(\"M\") == 0:\n            last_m_pos -= 1\n        while last_g_pos >= 0 and garbage[last_g_pos].count(\"G\") == 0:\n            last_g_pos -= 1\n        while last_p_pos >= 0 and garbage[last_p_pos].count(\"P\") == 0:\n            last_p_pos -= 1",
+        "detail": "leetcode_py.p2391",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2397",
+        "description": "leetcode_py.p2397",
+        "peekOfCode": "class Solution:\n    def cal_covered(self, matrix, bin):\n        n = len(matrix[0])\n        ret = 0\n        for row in matrix:\n            covered = True\n            for j in range(n):\n                if row[j] == 1 and bin[j] != \"1\":\n                    covered = False\n                    break",
+        "detail": "leetcode_py.p2397",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2415",
+        "description": "leetcode_py.p2415",
+        "peekOfCode": "class Solution:\n    def reverseOddLevels(self, root):\n        que = Queue()\n        que.put(root)\n        level = 0\n        while que.qsize():\n            size = que.qsize()\n            nodes = []\n            vals = []\n            print(que.qsize())",
+        "detail": "leetcode_py.p2415",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2462",
+        "description": "leetcode_py.p2462",
+        "peekOfCode": "class Solution:\n    def totalCost(self, costs, k, candidates):\n        total_cost = 0\n        heap = []\n        n = len(costs)\n        left_bound = 0\n        right_bound = n - 1\n        while left_bound < candidates and left_bound <= right_bound:\n            heapq.heappush(heap, (costs[left_bound], left_bound))\n            left_bound += 1",
+        "detail": "leetcode_py.p2462",
+        "documentation": {}
+    },
+    {
+        "label": "TreeNode",
+        "kind": 6,
+        "importPath": "leetcode_py.p2476",
+        "description": "leetcode_py.p2476",
+        "peekOfCode": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\nclass Solution0:\n    def find_bound(self, root, goal):\n        min_ = -1\n        max_ = 1000009\n        p = root",
+        "detail": "leetcode_py.p2476",
+        "documentation": {}
+    },
+    {
+        "label": "Solution0",
+        "kind": 6,
+        "importPath": "leetcode_py.p2476",
+        "description": "leetcode_py.p2476",
+        "peekOfCode": "class Solution0:\n    def find_bound(self, root, goal):\n        min_ = -1\n        max_ = 1000009\n        p = root\n        while p and p.val != goal:\n            if p.val > goal:\n                max_ = min(max_, p.val)\n                p = p.left\n            else:",
+        "detail": "leetcode_py.p2476",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2476",
+        "description": "leetcode_py.p2476",
+        "peekOfCode": "class Solution(object):\n    def __init__(self) -> None:\n        self.vals = []\n    def get_vals(self, root):\n        if root:\n            self.get_vals(root.left)\n            self.vals.append(root.val)\n            self.get_vals(root.right)\n    def closestNodes(self, root, queries):\n        self.get_vals(root)",
+        "detail": "leetcode_py.p2476",
+        "documentation": {}
+    },
+    {
+        "label": "ListNode",
+        "kind": 6,
+        "importPath": "leetcode_py.p2487",
+        "description": "leetcode_py.p2487",
+        "peekOfCode": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\nclass Solution:\n    def removeNodes(self, head):\n        st = []\n        node = head\n        while node:\n            while st and st[-1] < node.val:",
+        "detail": "leetcode_py.p2487",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2487",
+        "description": "leetcode_py.p2487",
+        "peekOfCode": "class Solution:\n    def removeNodes(self, head):\n        st = []\n        node = head\n        while node:\n            while st and st[-1] < node.val:\n                st.pop()\n            st.append(node.val)\n            node = node.next\n        n = len(st)",
+        "detail": "leetcode_py.p2487",
+        "documentation": {}
+    },
+    {
+        "label": "Solution1",
+        "kind": 6,
+        "importPath": "leetcode_py.p2584",
+        "description": "leetcode_py.p2584",
+        "peekOfCode": "class Solution1:\n    def prime_factors(self, nums: int) -> list[int]:\n        ret = []\n        for i in range(2, nums + 1):\n            if nums % i == 0:\n                ret.append(i)\n            while nums % i == 0:\n                nums //= i\n        return ret\n    def findValidSplit(self, nums: list[int]) -> int:",
+        "detail": "leetcode_py.p2584",
+        "documentation": {}
+    },
+    {
+        "label": "Solution2",
+        "kind": 6,
+        "importPath": "leetcode_py.p2584",
+        "description": "leetcode_py.p2584",
+        "peekOfCode": "class Solution2:\n    def __init__(self) -> None:\n        self.n = 0\n        self.forbidden_ranges = []\n        self.ans = 0\n    def prime(self, p):\n        if p < 2:\n            return False\n        for i in range(2, int(math.sqrt(p)) + 1):\n            if p % i == 0:",
+        "detail": "leetcode_py.p2584",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2584",
+        "description": "leetcode_py.p2584",
+        "peekOfCode": "class Solution:\n    def findValidSplit(self, nums: list[int]) -> int:\n        n = len(nums)\n        left = {}  # left[p] 表示质数 p 首次出现的下标\n        right = [-1 for _ in range(n)]  # right[i] 表示左端点为 i 的区间的右端点的最大值\n        # 区间的概念在这里隐去了，只记录左右端点\n        def f(p, i):\n            # 质数p 在i的位置出现了\n            if p in left:\n                right[left[p]] = i",
+        "detail": "leetcode_py.p2584",
+        "documentation": {}
+    },
+    {
+        "label": "TreeNode",
+        "kind": 6,
+        "importPath": "leetcode_py.p2641",
+        "description": "leetcode_py.p2641",
+        "peekOfCode": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\nclass Solution:\n    def __init__(self) -> None:\n        self.level_sum = {}\n        self.parent = {}\n    def get_level(self, root):",
+        "detail": "leetcode_py.p2641",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2641",
+        "description": "leetcode_py.p2641",
+        "peekOfCode": "class Solution:\n    def __init__(self) -> None:\n        self.level_sum = {}\n        self.parent = {}\n    def get_level(self, root):\n        que = deque()\n        que.append(root)\n        level = 0\n        while que:\n            size = len(que)",
+        "detail": "leetcode_py.p2641",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2660",
+        "description": "leetcode_py.p2660",
+        "peekOfCode": "class Solution:\n    def find_score(self, player):\n        ret = 0\n        for i, x in enumerate(player):\n            if i == 0:\n                ret += x\n            if i == 1:\n                ret += 2 * x if player[i - 1] == 10 else x\n            if i > 1:\n                ret += 2 * x if player[i - 1] == 10 or player[i - 2] == 10 else x",
+        "detail": "leetcode_py.p2660",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2808",
+        "description": "leetcode_py.p2808",
+        "peekOfCode": "class Solution:\n    def find_step(self, nums_length, num, pos):\n        # 已经有了所有的pos，只要找到最大间隔就可以\n        n = len(pos)\n        biggest_gap = 0\n        for i, p in enumerate(pos):\n            pre = pos[(i - 1 + n) % n]\n            post = pos[(i + 1) % n]\n            biggest_gap = max(\n                biggest_gap,",
+        "detail": "leetcode_py.p2808",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2828",
+        "description": "leetcode_py.p2828",
+        "peekOfCode": "class Solution:\n    def isAcronym(self, words, s):\n        first_letters = [word[0] for word in words]\n        acr = \"\".join(first_letters)\n        return acr == s",
+        "detail": "leetcode_py.p2828",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2831",
+        "description": "leetcode_py.p2831",
+        "peekOfCode": "class Solution:\n    def find_longest(self, pos, k):\n        i = 0\n        j = 0\n        n = len(pos)\n        # print(f\"pos: {pos}\")\n        ret = 0\n        while j < n:\n            curr_len = j - i + 1\n            ret = max(ret, curr_len)",
+        "detail": "leetcode_py.p2831",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2861",
+        "description": "leetcode_py.p2861",
+        "peekOfCode": "class Solution:\n    def can_produce(self, n, budget, demand, stock, cost, target):\n        for i in range(n):\n            need = demand[i] * target\n            if need <= stock[i]:\n                continue\n            else:\n                spend = (need - stock[i]) * cost[i]\n                budget -= spend\n                if budget < 0:",
+        "detail": "leetcode_py.p2861",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2865-p2866",
+        "description": "leetcode_py.p2865-p2866",
+        "peekOfCode": "class Solution:\n    def maximumSumOfHeights0(self, maxHeights):\n        n = len(maxHeights)\n        dpl = [0 for _ in range(n)]\n        dpr = [0 for _ in range(n)]\n        # dpl[i] 表示以i为山峰时, i以及i左边的山峰高度和\n        # dpr[i] 表示以i为山峰时, i以及i右边的山峰高度和\n        dpl[0] = maxHeights[0]\n        for i in range(1, n):\n            mh = maxHeights[i]",
+        "detail": "leetcode_py.p2865-p2866",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p2903",
+        "description": "leetcode_py.p2903",
+        "peekOfCode": "class Solution:\n    def findIndices(self, nums, indexDifference, valueDifference) :\n        n=len(nums)\n        for i in range(n):\n            for j in range(n):\n                if math.fabs(i-j)>=indexDifference and math.fabs(nums[i]-nums[j])>=valueDifference:\n                    return [i,j]\n        return [-1,-1]",
+        "detail": "leetcode_py.p2903",
+        "documentation": {}
+    },
+    {
+        "label": "MedianFinder1",
+        "kind": 6,
+        "importPath": "leetcode_py.p295",
+        "description": "leetcode_py.p295",
+        "peekOfCode": "class MedianFinder1:\n    def insertion_sort(self):\n        arr = self.nums\n        for i in range(1, len(arr)):\n            key = arr[i]\n            j = i - 1\n            while j >= 0 and arr[j] > key:\n                arr[j + 1] = arr[j]\n                j -= 1\n            arr[j + 1] = key",
+        "detail": "leetcode_py.p295",
+        "documentation": {}
+    },
+    {
+        "label": "MedianFinder",
+        "kind": 6,
+        "importPath": "leetcode_py.p295",
+        "description": "leetcode_py.p295",
+        "peekOfCode": "class MedianFinder:\n    def __init__(self):\n        self.st1 = []\n        self.st2 = []\n    def addNum(self, num: int) -> None:\n        while self.st1 and self.st1[-1] > num:\n            self.st2.append(self.st1.pop())\n        while self.st2 and self.st2[-1] < num:\n            self.st1.append(self.st2.pop())\n        self.st1.append(num)",
+        "detail": "leetcode_py.p295",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p30",
+        "description": "leetcode_py.p30",
+        "peekOfCode": "class Solution:\n    def magicTower(self, nums):\n        if sum(nums) < 0:\n            return -1\n        h = []\n        n = len(nums)\n        ret = 0\n        cur = 1\n        for num in nums:\n            if num < 0:",
+        "detail": "leetcode_py.p30",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p32",
+        "description": "leetcode_py.p32",
+        "peekOfCode": "class Solution:\n    def longestValidParentheses1(self, s):\n        n = len(s)\n        MR = 0x7FFFFFFF\n        dp = [MR for _ in range(n)]\n        # dp[i] = j represent that j is the farest pos to make a valid substr\n        for i in range(1, n):\n            if s[i] == \"(\":\n                continue\n            j = i - 1",
+        "detail": "leetcode_py.p32",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p321",
+        "description": "leetcode_py.p321",
+        "peekOfCode": "class Solution:\n    def maxNumber(self, nums1, nums2, k):\n        def pick(num, k):\n            st = []\n            drop = len(num) - k\n            for d in num:\n                while drop and st and st[-1] < d:\n                    st.pop()\n                    drop -= 1\n                st.append(d)",
+        "detail": "leetcode_py.p321",
+        "documentation": {}
+    },
+    {
+        "label": "ref_Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p321",
+        "description": "leetcode_py.p321",
+        "peekOfCode": "class ref_Solution:\n    def maxNumber(self, nums1, nums2, k):\n        def pick_max(nums, k):\n            stack = []\n            drop = len(nums) - k\n            for num in nums:\n                while drop and stack and stack[-1] < num:\n                    stack.pop()\n                    drop -= 1\n                stack.append(num)",
+        "detail": "leetcode_py.p321",
+        "documentation": {}
+    },
+    {
+        "label": "run",
+        "kind": 2,
+        "importPath": "leetcode_py.p321",
+        "description": "leetcode_py.p321",
+        "peekOfCode": "def run():\n    n1 = [6, 7]\n    n2 = [6, 0, 4]\n    s = Solution()\n    print(s.maxNumber(n1, n2, 5))\ndef test():\n    l1 = []\n    l2 = [1, 4, 3]\n    print(l1 > l2)\nif __name__ == \"__main__\":",
+        "detail": "leetcode_py.p321",
+        "documentation": {}
+    },
+    {
+        "label": "test",
+        "kind": 2,
+        "importPath": "leetcode_py.p321",
+        "description": "leetcode_py.p321",
+        "peekOfCode": "def test():\n    l1 = []\n    l2 = [1, 4, 3]\n    print(l1 > l2)\nif __name__ == \"__main__\":\n    run()",
+        "detail": "leetcode_py.p321",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p365",
+        "description": "leetcode_py.p365",
+        "peekOfCode": "class Solution:\n    def can_get(self, x, y):\n        ret = set()\n        for i in [0, x, y, x + y]:\n            ret.add(i)\n        if x < y:\n            t = x\n            x = y\n            y = t\n        rest = 0",
+        "detail": "leetcode_py.p365",
+        "documentation": {}
+    },
+    {
+        "label": "Solution1",
+        "kind": 6,
+        "importPath": "leetcode_py.p373",
+        "description": "leetcode_py.p373",
+        "peekOfCode": "class Solution1:\n    # unsolved\n    def kSmallestPairs(self, nums1, nums2, k):\n        ret = []\n        heap = []\n        for n1 in nums1:\n            for n2 in nums2:\n                heapq.heappush(heap, [-n1 - n2, n1, n2])\n                if len(heap) > k:\n                    heapq.heappop(heap)",
+        "detail": "leetcode_py.p373",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p373",
+        "description": "leetcode_py.p373",
+        "peekOfCode": "class Solution:\n    # unsolved\n    def kSmallestPairs(self, nums1, nums2, k):\n        i, j = 0, 0\n        ret = []\n        n1, n2 = len(nums1), len(nums2)\n        curr_low_bound = 0x80000000\n        while len(ret) < k:\n            ret.append([nums1[i], nums2[j]])\n            curr_low_bound = max(curr_low_bound, sum(ret[-1]))",
+        "detail": "leetcode_py.p373",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p394",
+        "description": "leetcode_py.p394",
+        "peekOfCode": "class Solution:\n    def extract_num(self, s, i=0):\n        ret = \"\"\n        while \"0\" <= s[i] <= \"9\":\n            ret += s[i]\n            i += 1\n        return ret\n    def decodeString(self, s):\n        st = []\n        i = 0",
+        "detail": "leetcode_py.p394",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p402",
+        "description": "leetcode_py.p402",
+        "peekOfCode": "class Solution:\n    def removeKdigits(self, num: str, k: int) -> str:\n        st = []\n        remain = len(num) - k\n        for d in num:\n            while k and st and st[-1] > d:\n                st.pop()\n                k -= 1\n            st.append(d)\n        return \"\".join(st[:remain]).lstrip(\"0\") or \"0\"",
+        "detail": "leetcode_py.p402",
+        "documentation": {}
+    },
+    {
+        "label": "Solution1",
+        "kind": 6,
+        "importPath": "leetcode_py.p502",
+        "description": "leetcode_py.p502",
+        "peekOfCode": "class Solution1:\n    def findMaximizedCapital(\n        self, k: int, w: int, profits: list[int], capital: list[int]\n    ) -> int:\n        # 实际上是背包问题\n        # 选择了k个之后，max_profit 是固定的\n        # 就是要验证w 是否大于capital\n        n = len(profits)\n        # dp = [\n        #     [0] * (k + 1) for _ in range(n)",
+        "detail": "leetcode_py.p502",
+        "documentation": {}
+    },
+    {
+        "label": "Solution2",
+        "kind": 6,
+        "importPath": "leetcode_py.p502",
+        "description": "leetcode_py.p502",
+        "peekOfCode": "class Solution2:\n    def findMaximizedCapital(\n        self, k: int, w: int, profits: list[int], capital: list[int]\n    ) -> int:\n        heap = []\n        p = []\n        n = len(profits)\n        ret = 0\n        for i in range(n):\n            p.append([profits[i], capital[i], False])",
+        "detail": "leetcode_py.p502",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p502",
+        "description": "leetcode_py.p502",
+        "peekOfCode": "class Solution:\n    def findMaximizedCapital(\n        self, k: int, w: int, profits: list[int], capital: list[int]\n    ) -> int:\n        ps = [[p, c] for p, c in zip(profits, capital)]\n        ps = sorted(ps, key=lambda x: x[1])\n        heap = []\n        i = 0\n        n = len(ps)\n        for _ in range(k):",
+        "detail": "leetcode_py.p502",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p646",
+        "description": "leetcode_py.p646",
+        "peekOfCode": "class Solution:\n    def findLongestChain(self, pairs):\n        pairs = sorted(pairs, key=lambda x: x[1])\n        n = len(pairs)\n        # try to find the final chain?\n        # dp[i] = l, pairs represent the longest chain length and chain index ends with pairs[i]\n        dp = [[1, [i]] for i in range(n)]\n        max_length = 1\n        res_i = 0\n        for i in range(1, n):",
+        "detail": "leetcode_py.p646",
+        "documentation": {}
+    },
+    {
+        "label": "test_findLongestChain",
+        "kind": 2,
+        "importPath": "leetcode_py.p646_test",
+        "description": "leetcode_py.p646_test",
+        "peekOfCode": "def test_findLongestChain(pairs, expected_length, expected_chain):\n    # Arrange - omitted due to input values provided via test parameters\n    # Act\n    length, chain = findLongestChain(None, pairs)\n    # Assert\n    assert (\n        length == expected_length\n    ), f\"Expected chain length {expected_length}, got {length}\"\n    assert chain == expected_chain, f\"Expected chain {expected_chain}, got {chain}\"",
+        "detail": "leetcode_py.p646_test",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p670",
+        "description": "leetcode_py.p670",
+        "peekOfCode": "class Solution:\n    def maximumSwap(self, num):\n        num_s = str(num)\n        ret = num\n        n = len(num_s)\n        for d in range(9, 0, -1):\n            big_char = str(d)\n            big_pos = num_s.rfind(big_char)\n            if big_pos == -1:\n                continue",
+        "detail": "leetcode_py.p670",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p712",
+        "description": "leetcode_py.p712",
+        "peekOfCode": "class Solution:\n    def minimumDeleteSum(self, s1, s2):\n        s1 += \" \"\n        s2 += \" \"\n        n1, n2 = len(s1), len(s2)\n        cp = [[0] * n2 for _ in range(n1)]\n        # cp[i][j] represents largest common part's ascii value of\n        # s1[0..i] s2[0..j]\n        cp[0][0] = ord(s1[0]) if s1[0] == s2[0] else 0\n        have_first_char = False",
+        "detail": "leetcode_py.p712",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p741",
+        "description": "leetcode_py.p741",
+        "peekOfCode": "class Solution:\n    def cherryPickup(self, grid) -> int:\n        n = len(grid)\n        dp = [[0 for _ in range(n)] for _ in range(n)]\n        dp[0][0] = grid[0][0]\n        reachable = [[0 for _ in range(n)] for _ in range(n)]\n        reachable[0][0] = 1\n        not_reachable = -n * n\n        for j in range(1, n):\n            if grid[0][j] == -1:",
+        "detail": "leetcode_py.p741",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p826",
+        "description": "leetcode_py.p826",
+        "peekOfCode": "class Solution:\n    class task:\n        def __init__(self, diff, profit) -> None:\n            self.d = diff\n            self.p = profit\n        def __str__(self) -> str:\n            return f\"d={self.d}, p={self.p}\"\n    def cmp(self, a, b):\n        if a.d == b.d:\n            return b.p - a.p",
+        "detail": "leetcode_py.p826",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p857",
+        "description": "leetcode_py.p857",
+        "peekOfCode": "class Solution:\n    class worker:\n        def __init__(self, q, w) -> None:\n            self.q = q\n            self.w = w\n            self.r = w / q  # 每单位质量需要的价格\n        def __str__(self) -> str:\n            return f\"q={self.q}, w={self.w}, r={self.r:0.4f}\"\n    def minCostToHireWorkers(self, quality, wage, k):\n        n = len(quality)",
+        "detail": "leetcode_py.p857",
+        "documentation": {}
+    },
+    {
+        "label": "test",
+        "kind": 2,
+        "importPath": "leetcode_py.p857",
+        "description": "leetcode_py.p857",
+        "peekOfCode": "def test():\n    qualities = [\n        [10, 20, 5],\n        [3, 1, 10, 10, 1],\n        [25, 68, 35, 62, 52, 57, 35, 83, 40, 51],\n    ]\n    wages = [\n        [70, 50, 30],\n        [4, 8, 2, 2, 7],\n        [147, 97, 251, 129, 438, 443, 120, 366, 362, 343],",
+        "detail": "leetcode_py.p857",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p877",
+        "description": "leetcode_py.p877",
+        "peekOfCode": "class Solution:\n    def res_one(self, piles, total):\n        # 递归太复杂了\n        # 计算能在piles中获得的最大石子数\n        if len(piles) == 1:\n            return piles[0]\n        if len(piles) == 2:\n            return max(piles[0], piles[1])\n        left = total - self.res_one(piles[1:], total - piles[0])\n        right = total - self.res_one(piles[:-1], total - piles[-1])",
+        "detail": "leetcode_py.p877",
+        "documentation": {}
+    },
+    {
+        "label": "TreeNode",
+        "kind": 6,
+        "importPath": "leetcode_py.p889",
+        "description": "leetcode_py.p889",
+        "peekOfCode": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\nclass Solution:\n    def constructFromPrePost(self, preorder, postorder):\n        if len(preorder) == 0:\n            return None\n        if len(preorder) == 1:",
+        "detail": "leetcode_py.p889",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p889",
+        "description": "leetcode_py.p889",
+        "peekOfCode": "class Solution:\n    def constructFromPrePost(self, preorder, postorder):\n        if len(preorder) == 0:\n            return None\n        if len(preorder) == 1:\n            return TreeNode(preorder[0])\n        if len(preorder) >= 2:\n            root_val = preorder[0]\n            left_val = preorder[1]\n            left_size = postorder.index(left_val) + 1",
+        "detail": "leetcode_py.p889",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p92",
+        "description": "leetcode_py.p92",
+        "peekOfCode": "class Solution:\n    def minFlipsMonoIncr(self, s):\n        n = len(s)\n        cnt1 = sum(int(c) for c in s)\n        cnt0 = n - cnt1\n        curr0 = 0\n        curr1 = 0\n        ret = n\n        for c in s:\n            op = curr1 + cnt0 - curr0",
+        "detail": "leetcode_py.p92",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p931",
+        "description": "leetcode_py.p931",
+        "peekOfCode": "class Solution:\n    def minFallingPathSum(self, matrix):\n        n = len(matrix)\n        dp = [[0x7FFFFFFF] * n for _ in range(n)]\n        for c in range(n):\n            dp[0][c] = matrix[0][c]\n        ans = sum(matrix[r][0] for r in range(n))\n        for r, c in itertools.product(range(1, n), range(n)):\n            m = matrix[r][c]\n            if c == 0:",
+        "detail": "leetcode_py.p931",
+        "documentation": {}
+    },
+    {
+        "label": "Solution1",
+        "kind": 6,
+        "importPath": "leetcode_py.p97",
+        "description": "leetcode_py.p97",
+        "peekOfCode": "class Solution1:\n    def s1_first(self, s1, s2, s3):\n        # 思路绝佳，但是超时了\n        if s1 == s3:\n            return True\n        for length in range(1, len(s1) + 1):\n            if s3[:length] == s1[:length]:\n                if self.s1_first(s2, s1[length:], s3[length:]):\n                    return True\n            else:",
+        "detail": "leetcode_py.p97",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p97",
+        "description": "leetcode_py.p97",
+        "peekOfCode": "class Solution:\n    def isInterleave(self, s1: str, s2: str, s3: str) -> bool:\n        l1, l2, l3 = len(s1), len(s2), len(s3)\n        if l3 - l1 - l2 != 0:\n            return False\n        dp = [[False] * (l2 + 1) for _ in range(l1 + 1)]\n        dp[0][0] = True\n        for i, j in itertools.product(range(l1 + 1), range(l2 + 1)):\n            p = i + j - 1\n            if i > 0 and s1[i - 1] == s3[p]:",
+        "detail": "leetcode_py.p97",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p980",
+        "description": "leetcode_py.p980",
+        "peekOfCode": "class Solution:\n    def __init__(self) -> None:\n        self.visited = [[0 for _ in range(22)] for _ in range(22)]\n        self.dir = [[1, 0], [-1, 0], [0, 1], [0, -1]]\n        self.ans = 0\n        self.pathLen = 0\n        self.Num0 = 1\n        self.n = 0\n        self.m = 0\n    def valid(self, i, j) -> bool:",
+        "detail": "leetcode_py.p980",
+        "documentation": {}
+    },
+    {
+        "label": "TreeNode",
+        "kind": 6,
+        "importPath": "leetcode_py.p987",
+        "description": "leetcode_py.p987",
+        "peekOfCode": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\nclass Solution:\n    def __init__(self) -> None:\n        self.matrix = {}\n        self.most_left = 0\n        self.most_right = 0",
+        "detail": "leetcode_py.p987",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p987",
+        "description": "leetcode_py.p987",
+        "peekOfCode": "class Solution:\n    def __init__(self) -> None:\n        self.matrix = {}\n        self.most_left = 0\n        self.most_right = 0\n        self.most_down = 0\n    def put_matrix(self, root, row=0, col=0):\n        if root:\n            pos = (row, col)\n            print(f\"node {root.val} at ({pos})\")",
+        "detail": "leetcode_py.p987",
+        "documentation": {}
+    },
+    {
+        "label": "TreeNode",
+        "kind": 6,
+        "importPath": "leetcode_py.p993",
+        "description": "leetcode_py.p993",
+        "peekOfCode": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n    def __str__(self) -> str:\n        return str(self.val)\nclass Solution0:\n    # 有的情况没有考虑到\n    def isCousins(self, root, x, y):",
+        "detail": "leetcode_py.p993",
+        "documentation": {}
+    },
+    {
+        "label": "Solution0",
+        "kind": 6,
+        "importPath": "leetcode_py.p993",
+        "description": "leetcode_py.p993",
+        "peekOfCode": "class Solution0:\n    # 有的情况没有考虑到\n    def isCousins(self, root, x, y):\n        if not root:\n            return False\n        lc = root.left\n        rc = root.right\n        if not lc:\n            return self.isCousins(rc, x, y)\n        if not rc:",
+        "detail": "leetcode_py.p993",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p993",
+        "description": "leetcode_py.p993",
+        "peekOfCode": "class Solution:\n    def __init__(self) -> None:\n        self.parent = {}\n        self.paths = []\n    def post_order(self, root, parent=None):\n        if root:\n            self.post_order(root.left, root)\n            self.post_order(root.right, root)\n            self.parent[root] = parent\n    def pre_order(self, root, x):",
+        "detail": "leetcode_py.p993",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "leetcode_py.p994",
+        "description": "leetcode_py.p994",
+        "peekOfCode": "class Solution:\n    def orangesRotting(self, grid: list[list[int]]) -> int:\n        self.m = len(grid)\n        self.n = len(grid[0])\n        q = deque()\n        for i in range(self.m):\n            for j in range(self.n):\n                if grid[i][j] == 2:\n                    q.append((i, j, 0))\n        def neighbor(i, j):",
+        "detail": "leetcode_py.p994",
+        "documentation": {}
+    }
+]

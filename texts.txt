@@ -1,0 +1,70 @@
+ali accesskey：
+
+LTAI5tEhgLhGsLRA6C4Efc1B
+9HekXd2oAb8OzdBo02xKPiCYFm926o
+
+rar keys：
+@-LS-Models-Collection-@
+av783661
+
+
+7月：
+[1] 黄松,龚士豪. 程序静态分析报告处理方法综述[J]. 计算机技术与发展,2023,33(1):14-20. DOI:10.3969/j.issn.1673-629X.2023.01.003.
+[2] 金天成,窦亮,张伟,等. 基于深度强化学习与程序分析的OJ习题推荐模型[J]. 计算机科学,2023,50(8):58-67. DOI:10.11896/jsjkx.220600260.
+[3] 刘文佳. 基于程序分析和图神经网络的相似漏洞检测研究[D]. 黑龙江:哈尔滨工业大学,2022.
+[4] 林开鹏. 基于深度学习的数值程序分析与验证研究[D]. 浙江:浙江理工大学,2022.
+[5] 于学斗,柏晓钰. 基于Python的城市天气数据爬虫程序分析[J]. 办公自动化,2022,27(7):10-13,9. DOI:10.3969/j.issn.1007-001X.2022.07.004.
+
+8月：
+[1]谭添,马晓星,许畅,等.Java指针分析综述[J].计算机研究与发展,2023,60(02):274-293.
+[2]邓茜,范广生,陈立前,等.基于C语言程序分析验证技术的Verilog代码验证方法[J].计算机工程与科学,2023,45(12):2146-2154.
+[3]金天成,窦亮,张伟,等.基于深度强化学习与程序分析的OJ习题推荐模型[J].计算机科学,2023,50(08):58-67.
+[4]Mashhadi E ,Chowdhury S ,Modaberi S , et al.An empirical study on bug severity estimation using source code metrics and static analysis[J].The Journal of Systems & Software,2024,217112179-112179.
+[5]Venkatesh S P A ,Sabu S ,Chekkapalli M , et al.Static analysis driven enhancements for comprehension in machine learning notebooks[J].Empirical Software Engineering,2024,29(5):136-136.
+[6]Han C .Can large language model replace static analysis tools[C]//East China Normal University (China),2024:
+
+9月：
+[1] 张顺香,李健,朱广丽,等. 基于改进编解码器和情感词典的对话生成模型[J]. 计算机工程与设计,2023,44(2):570-575. DOI:10.16208/j.issn1000-7024.2023.02.034.
+[2] 崔朝阳,江爱文,陈思航,等. 基于BERT模型的多层语义粒度视觉对话算法[J]. 中文信息学报,2023,37(11):120-130. DOI:10.3969/j.issn.1003-0077.2023.11.013.
+[3] 毕忠勤,张锴,单美静,等. 基于图神经网络的多源异构知识增强对话模型[J]. 科学技术与工程,2024,24(17):7196-7204. DOI:10.12404/j.issn.1671-1815.2303521.
+[4] 黄健,李锋. 融合角色、结构和语义的口语对话预训练语言模型[J]. 计算机应用研究,2022,39(8):2397-2402. DOI:10.19734/j.issn.1001-3695.2022.01.0029.
+[5] 安毅生,李人厚. 基于对话的多Agent协作交互模型[J]. 西安交通大学学报,2005,39(12):1344-1348. DOI:10.3321/j.issn:0253-987X.2005.12.014.
+
+
+10月：
+[1] 王清未,李振阳,张效生,等. 利用CRISPR/Cas9技术构建RAG1基因敲除免疫缺陷猪模型的研究[J]. 黑龙江畜牧兽医,2024(9):1-7,114-115. DOI:10.13881/j.cnki.hljxmsy.2023.05.0003.
+[2] 洪亮,郭瑶,刘兴丽,等. 基于RAG的煤矿安全智能问答模型[J]. 黑龙江科技大学学报,2024,34(3):487-492. DOI:10.3969/j.issn.2095-7262.2024.03.024.
+[3] 张丽静,杜冬梅,刘庆芳,等. 基于LLM和RAG的中邮网院智能客服系统研究[J]. 邮政研究,2024,40(4):66-72. DOI:10.13955/j.yzyj.2024.04.11.07.
+[4] 鲍志,姚宏亮,方帅,等. 基于多Agent传动关系的股市趋势预测[J]. 计算机工程,2024,50(3):267-276. DOI:10.19678/j.issn.1000-3428.0067393.
+[5] 周亦鹏,胡娟,杜军平. 基于多Agent进化计算的图像目标识别[J]. 复杂系统与复杂性科学,2013,10(3):55-60. DOI:10.3969/j.issn.1672-3813.2013.03.009.
+
+
+11月：
+[22]方浩然. 基于模糊测试的程序分析报告验证方法研究[D]. 江西:江西师范大学,2022.
+[23] 钟逸,冷彦,陈思慧,等. 基于大语言模型RAG架构的电池加速研究:现状与展望[J]. 储能科学与技术,2024,13(9):3214-3225. DOI:10.19799/j.cnki.2095-4239.2024.0604.
+[24] 郭先会,张梦姣,马军. 基于大语言模型的智能体构建综述[J]. 通信技术,2024,57(9):873-879. DOI:10.3969/j.issn.1002-0802.2024.09.001.
+[25] 李婷,周梅,何颉. 生成式人工智能技术对软件行业的影响及应对策略[J]. 企业科技与发展,2024(5):40-44. DOI:10.3969/j.issn.1674-0688.2024.05.010.
+[26] 黄松,龚士豪. 程序静态分析报告处理方法综述[J]. 计算机技术与发展,2023,33(1):14-20. DOI:10.3969/j.issn.1673-629X.2023.01.003.
+
+12月：
+ 姜文,刘立康. C++与Java软件重量级静态检查[J]. 计算机技术与发展,2016,26(8):17-23. DOI:10.3969/j.issn.1673-629X.2016.08.004. 
+ 马红刚. C/C++程序资源泄漏的静态检查研究[D]. 陕西:西安电子科技大学,2006. DOI:10.7666/d.Y1137190. 
+ 姜文,刘立康. 基于Linux环境的C/C++软件重量级静态检查[J]. 微型电脑应用,2016,32(5):12-15. DOI:10.3969/j.issn.1007-757X.2016.05.004. 
+ 张旭. 代码缺陷静态检查与预测的相互增强方法研究[D]. 江苏:南京大学,2019. 
+ 成都赛力斯科技有限公司. 一种静态检查的规则集生成方法及装置:CN202310615777.8[P]. 2023-09-15. 
+
+1月：
+ 向东,刘海燕. C/C++静态代码安全检查工具研究[J]. 计算机工程与设计,2005,26(8):2110-2112. DOI:10.3969/j.issn.1000-7024.2005.08.044. 
+ 付腾. 静态分析工具效率优化的设计与实现[D]. 陕西:西安电子科技大学,2017. DOI:10.7666/d.D01386328. 
+曾福萍,王泽宇,李宇佳,等. 面向静态分析的软件测试工具评估方法研究[J]. 计算机测量与控制,2024,32(12):280-287. DOI:10.16526/j.cnki.11-4762/tp.2024.12.040.
+ 张丽. 代码静态分析工具的能力评估与集成优化技术研究[D]. 湖南:国防科学技术大学,2017. 
+ 王凯,孔祥营. 软件静态分析工具评析[J]. 指挥控制与仿真,2011,33(2):109-111,119. DOI:10.3969/j.issn.1673-3819.2011.02.031. 
+ 赵新建,王铁磊,韦韬,等. 程序静态分析工具的分类研究[C]//第六届中国信息和通信安全学术会议(CCICS'2009)论文集. 2009:577-583. 
+
+2月：
+Guo D, Yang D, Zhang H, et al. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning[J]. arXiv preprint arXiv:2501.12948, 2025.
+Liu A, Feng B, Xue B, et al. Deepseek-v3 technical report[J]. arXiv preprint arXiv:2412.19437, 2024.
+Liu A, Feng B, Wang B, et al. Deepseek-v2: A strong, economical, and efficient mixture-of-experts language model[J]. arXiv preprint arXiv:2405.04434, 2024.
+Bi X, Chen D, Chen G, et al. Deepseek llm: Scaling open-source language models with longtermism[J]. arXiv preprint arXiv:2401.02954, 2024.
+Edge D, Trinh H, Cheng N, et al. From local to global: A graph rag approach to query-focused summarization[J]. arXiv preprint arXiv:2404.16130, 2024.
+Guo Z, Xia L, Yu Y, et al. Lightrag: Simple and fast retrieval-augmented generation[J]. 2024.

@@ -1,0 +1,72 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1700,         62]
+NotebookOptionsPosition[      1416,         47]
+NotebookOutlinePosition[      1804,         64]
+CellTagsIndexPosition[      1761,         61]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"ContourPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "^", 
+      RowBox[{"\:ff08", 
+       RowBox[{"2", "/", "3"}], "\:ff09"}]}], "+", 
+     RowBox[{"y", "^", 
+      RowBox[{"\:ff08", 
+       RowBox[{"2", "/", "3"}], "\:ff09"}]}]}], "\[Equal]", 
+    RowBox[{"3.1415926", "^", 
+     RowBox[{"(", 
+      RowBox[{"2", "/", "3"}], ")"}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "4"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{"-", "4"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"100", ",", "100"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.860793219055823*^9, 3.860793311265406*^9}, {
+  3.8607933516509967`*^9, 3.8607933535711403`*^9}, {3.8607934306572695`*^9, 
+  3.860793460655659*^9}}]
+},
+WindowSize->{1920, 1007},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>1.4 Inherited,
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (2015\:5e7411\:67084\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 854, 25, 63, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
